@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MEMO: 簡単なMatchedGeometryEffectを利用した表現を利用したサンプルを作成する
+
 struct ContentView: View {
     var body: some View {
         VStack {
