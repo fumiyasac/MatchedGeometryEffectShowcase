@@ -52,8 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				DE1A75AE2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift */,
-				DE1A75B02B7B65B900912224 /* ContentView.swift */,
 				DE1A75B22B7B65BA00912224 /* Assets.xcassets */,
+				DE1A75BC2B7E27D900912224 /* Application */,
 				DE1A75B42B7B65BA00912224 /* Preview Content */,
 			);
 			path = MatchedGeometryEffectShowcase;
@@ -65,6 +65,78 @@
 				DE1A75B52B7B65BA00912224 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE1A75BC2B7E27D900912224 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A75B02B7B65B900912224 /* ContentView.swift */,
+				DE1A75C42B7E290B00912224 /* Components */,
+				DE1A75C22B7E289900912224 /* Entity */,
+				DE1A75BF2B7E283D00912224 /* Extension */,
+				DE1A75C02B7E284600912224 /* Infrastructure */,
+				DE1A75C12B7E286700912224 /* Repository */,
+				DE1A75C52B7E293D00912224 /* Screen */,
+				DE1A75C32B7E28B700912224 /* ViewObject */,
+				DE1A75BE2B7E281B00912224 /* ViewStateProvider */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DE1A75BE2B7E281B00912224 /* ViewStateProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewStateProvider;
+			sourceTree = "<group>";
+		};
+		DE1A75BF2B7E283D00912224 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE1A75C02B7E284600912224 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		DE1A75C12B7E286700912224 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DE1A75C22B7E289900912224 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DE1A75C32B7E28B700912224 /* ViewObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewObject;
+			sourceTree = "<group>";
+		};
+		DE1A75C42B7E290B00912224 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DE1A75C52B7E293D00912224 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
