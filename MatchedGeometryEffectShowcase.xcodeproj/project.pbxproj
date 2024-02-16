@@ -11,6 +11,10 @@
 		DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75B02B7B65B900912224 /* ContentView.swift */; };
 		DE1A75B32B7B65BA00912224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1A75B22B7B65BA00912224 /* Assets.xcassets */; };
 		DE1A75B62B7B65BA00912224 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1A75B52B7B65BA00912224 /* Preview Assets.xcassets */; };
+		DE1A75C82B7FAC4700912224 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75C72B7FAC4700912224 /* Nuke */; };
+		DE1A75CA2B7FAC4700912224 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75C92B7FAC4700912224 /* NukeExtensions */; };
+		DE1A75CC2B7FAC4700912224 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75CB2B7FAC4700912224 /* NukeUI */; };
+		DE1A75CE2B7FAC4700912224 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75CD2B7FAC4700912224 /* NukeVideo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1A75CC2B7FAC4700912224 /* NukeUI in Frameworks */,
+				DE1A75C82B7FAC4700912224 /* Nuke in Frameworks */,
+				DE1A75CA2B7FAC4700912224 /* NukeExtensions in Frameworks */,
+				DE1A75CE2B7FAC4700912224 /* NukeVideo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +163,12 @@
 			dependencies = (
 			);
 			name = MatchedGeometryEffectShowcase;
+			packageProductDependencies = (
+				DE1A75C72B7FAC4700912224 /* Nuke */,
+				DE1A75C92B7FAC4700912224 /* NukeExtensions */,
+				DE1A75CB2B7FAC4700912224 /* NukeUI */,
+				DE1A75CD2B7FAC4700912224 /* NukeVideo */,
+			);
 			productName = MatchedGeometryEffectShowcase;
 			productReference = DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +197,9 @@
 				Base,
 			);
 			mainGroup = DE1A75A22B7B65B900912224;
+			packageReferences = (
+				DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = DE1A75AC2B7B65B900912224 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,6 +433,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE1A75C72B7FAC4700912224 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		DE1A75C92B7FAC4700912224 /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		DE1A75CB2B7FAC4700912224 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		DE1A75CD2B7FAC4700912224 /* NukeVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeVideo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE1A75A32B7B65B900912224 /* Project object */;
 }
