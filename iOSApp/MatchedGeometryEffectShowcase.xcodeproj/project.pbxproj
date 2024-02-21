@@ -17,6 +17,8 @@
 		DE1A75CE2B7FAC4700912224 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75CD2B7FAC4700912224 /* NukeVideo */; };
 		DE1A75D42B84D5C200912224 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75D32B84D5C200912224 /* Cosmos */; };
 		DE1A75D72B84D5D900912224 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75D62B84D5D900912224 /* PopupView */; };
+		DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */; };
+		DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DB2B8644C300912224 /* StarRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		DE1A75B02B7B65B900912224 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE1A75B22B7B65BA00912224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1A75B52B7B65BA00912224 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
+		DE1A75DB2B8644C300912224 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 		DE1A75C42B7E290B00912224 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE1A75D82B86448000912224 /* UIViewRepresentable */,
+				DE1A75DB2B8644C300912224 /* StarRatingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,6 +155,14 @@
 			children = (
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		DE1A75D82B86448000912224 /* UIViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */,
+			);
+			path = UIViewRepresentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
+				DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
 			);
