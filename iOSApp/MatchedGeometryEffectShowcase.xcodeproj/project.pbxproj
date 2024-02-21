@@ -19,6 +19,10 @@
 		DE1A75D72B84D5D900912224 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75D62B84D5D900912224 /* PopupView */; };
 		DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */; };
 		DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DB2B8644C300912224 /* StarRatingView.swift */; };
+		DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DD2B86450400912224 /* FirstAppearExtension.swift */; };
+		DE1A75E02B86451900912224 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DF2B86451900912224 /* StringExtension.swift */; };
+		DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */; };
+		DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75E32B86453E00912224 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		DE1A75B52B7B65BA00912224 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewRepresentable.swift; sourceTree = "<group>"; };
 		DE1A75DB2B8644C300912224 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		DE1A75DD2B86450400912224 /* FirstAppearExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppearExtension.swift; sourceTree = "<group>"; };
+		DE1A75DF2B86451900912224 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
+		DE1A75E32B86453E00912224 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,10 @@
 		DE1A75BF2B7E283D00912224 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DE1A75DD2B86450400912224 /* FirstAppearExtension.swift */,
+				DE1A75DF2B86451900912224 /* StringExtension.swift */,
+				DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */,
+				DE1A75E32B86453E00912224 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -250,7 +262,11 @@
 			files = (
 				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
 				DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */,
+				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
+				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
+				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
+				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
