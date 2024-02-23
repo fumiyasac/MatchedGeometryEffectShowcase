@@ -23,6 +23,7 @@
 		DE1A75E02B86451900912224 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DF2B86451900912224 /* StringExtension.swift */; };
 		DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */; };
 		DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75E32B86453E00912224 /* UIColorExtension.swift */; };
+		DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75E52B878D0B00912224 /* APIClientManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		DE1A75DF2B86451900912224 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtension.swift; sourceTree = "<group>"; };
 		DE1A75E32B86453E00912224 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DE1A75E52B878D0B00912224 /* APIClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		DE1A75C02B7E284600912224 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				DE1A75E52B878D0B00912224 /* APIClientManager.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
+				DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
