@@ -1,24 +1,5 @@
 import Foundation
 
-// MEMO: APIリクエストに関するEnum定義
-enum HTTPMethod {
-    case GET
-    case POST
-}
-
-// MEMO: APIエラーメッセージに関するEnum定義
-enum APIError: Error {
-    case error(message: String)
-}
-
-// MEMO: APIリクエストの状態に関するEnum定義
-enum APIRequestState {
-    case none
-    case requesting
-    case success
-    case error
-}
-
 // MARK: - Protocol
 
 protocol APIClientManagerProtocol {
@@ -37,18 +18,9 @@ final class ApiClientManager {
     // MARK: - Enum
 
     private enum EndPoint: String {
-        // MEMO: Home画面用
-        case campaignBanners = "campaign_banners"
-        case recentNews = "recent_news"
-        case featuredTopics = "featured_topics"
-        case trendArticles = "trend_articles"
-        case pickupPhotos = "pickup_photos"
-        case favoriteScenes = "favorite_scenes"
-        case achiveImages = "achive_images"
-        case profilePersonal = "profile_personal"
-        case profileAnnouncement = "profile_announcement"
-        case profileComment = "profile_comment"
-        case profileRecentFavorite = "profile_recent_favorite"
+
+        case pickupFoods = "pickup_foods"
+        case popularFoods = "popular_foods"
 
         func getBaseUrl() -> String {
             return [host, self.rawValue].joined(separator: "/")
