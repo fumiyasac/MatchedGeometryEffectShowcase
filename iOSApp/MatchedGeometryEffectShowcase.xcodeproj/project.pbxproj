@@ -30,6 +30,7 @@
 		DE1A75F22B8EFEA800912224 /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F12B8EFEA800912224 /* ContentRouter.swift */; };
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
+		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		DE1A75F12B8EFEA800912224 /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
+		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1A75AE2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift */,
+				DE1A75F92B90C66A00912224 /* AppDelegate.swift */,
 				DE1A75B22B7B65BA00912224 /* Assets.xcassets */,
 				DE1A75BC2B7E27D900912224 /* Application */,
 				DE1A75B42B7B65BA00912224 /* Preview Content */,
@@ -297,6 +300,7 @@
 				DE1A75EB2B8A013800912224 /* APIError.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
+				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
 				DE1A75F22B8EFEA800912224 /* ContentRouter.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
