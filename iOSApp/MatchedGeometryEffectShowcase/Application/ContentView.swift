@@ -13,12 +13,16 @@ import UIKit
 
 struct ContentView: View {
 
+    // MARK: - Propety
+
+    private let contentRouter = ContentRouter()
+
     // MARK: - Body
 
     var body: some View {
         ZStack {
             TabView {
-                PickupScreenView()
+                contentRouter.routeToPickup()
                     .tabItem {
                         VStack {
                             Image(systemName: "tray.full.fill")
@@ -26,7 +30,7 @@ struct ContentView: View {
                         }
                     }
                     .tag(0)
-                PopularScreenView()
+                contentRouter.routeToPopular()
                     .tabItem {
                         VStack {
                             Image(systemName: "photo.stack.fill")
