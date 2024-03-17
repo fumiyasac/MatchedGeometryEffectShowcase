@@ -31,6 +31,8 @@
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
+		DE3E7C4A2BA7A4AF00F72294 /* SimpleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7C492BA7A4AF00F72294 /* SimpleToastView.swift */; };
+		DE3E7C4C2BA7AC1500F72294 /* SimpleToastStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3E7C4B2BA7AC1500F72294 /* SimpleToastStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE3E7C492BA7A4AF00F72294 /* SimpleToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleToastView.swift; sourceTree = "<group>"; };
+		DE3E7C4B2BA7AC1500F72294 /* SimpleToastStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleToastStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +180,9 @@
 		DE1A75C42B7E290B00912224 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE3E7C482BA7A41300F72294 /* SimpleToast */,
+				DE3E7C472BA7A40200F72294 /* StarRating */,
 				DE1A75D82B86448000912224 /* UIViewRepresentable */,
-				DE1A75DB2B8644C300912224 /* StarRatingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +212,23 @@
 				DE1A75EE2B8A032900912224 /* HTTPMethod.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DE3E7C472BA7A40200F72294 /* StarRating */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A75DB2B8644C300912224 /* StarRatingView.swift */,
+			);
+			path = StarRating;
+			sourceTree = "<group>";
+		};
+		DE3E7C482BA7A41300F72294 /* SimpleToast */ = {
+			isa = PBXGroup;
+			children = (
+				DE3E7C492BA7A4AF00F72294 /* SimpleToastView.swift */,
+				DE3E7C4B2BA7AC1500F72294 /* SimpleToastStyle.swift */,
+			);
+			path = SimpleToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +323,12 @@
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
+				DE3E7C4C2BA7AC1500F72294 /* SimpleToastStyle.swift in Sources */,
 				DE1A75F22B8EFEA800912224 /* ContentRouter.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
+				DE3E7C4A2BA7A4AF00F72294 /* SimpleToastView.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
 				DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */,
 				DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */,
