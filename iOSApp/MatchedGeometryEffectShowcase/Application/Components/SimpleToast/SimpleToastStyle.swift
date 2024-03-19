@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 // MARK: - Enum
 
@@ -10,6 +11,8 @@ public enum SimpleToastStyle {
 }
 
 extension SimpleToastStyle {
+
+    // MARK: - Property
 
     var themeColor: Color {
         switch self {
