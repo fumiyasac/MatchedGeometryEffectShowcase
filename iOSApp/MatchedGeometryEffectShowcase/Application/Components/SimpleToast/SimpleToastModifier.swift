@@ -5,11 +5,11 @@ public struct ToastModifier: ViewModifier {
     
     // MARK: - Property
 
-    //
+    // MEMO: Toast表示用のインスタンスを格納する変数
     @Binding var simpleToast: SimpleToast?
-    //
+    // MEMO: 表示コントロール用の変数
     @State private var workItem: DispatchWorkItem?
-    
+
     // MARK: - Function
     
     public func body(content: Content) -> some View {
@@ -19,7 +19,8 @@ public struct ToastModifier: ViewModifier {
                 ZStack {
                     mainSimpleToastView()
                         .offset(y: 32)
-                }.animation(.spring(), value: simpleToast)
+                }
+                .animation(.spring(), value: simpleToast)
             )
             .onChange(of: simpleToast) {
                 showToast()
@@ -31,7 +32,7 @@ public struct ToastModifier: ViewModifier {
     @ViewBuilder public func mainSimpleToastView() -> some View {
         if let toast = simpleToast {
             VStack {
-                //
+                // MEMO: Toast表示処理を実行する
                 SimpleToastView(
                     style: toast.style,
                     message: toast.message,
@@ -51,10 +52,10 @@ public struct ToastModifier: ViewModifier {
         guard let toast = simpleToast else {
             return
         }
-        //
+        // MEMO: HapticFeedbackを表示時に付与する
         UIImpactFeedbackGenerator(style: .light)
             .impactOccurred()
-        //
+        // MEMO: Durationが0より大きい場合（すなわち表示途中のものが残っている場合）は一旦綺麗にしてから再度実行する
         if toast.duration > 0 {
             workItem?.cancel()
             let task = DispatchWorkItem {
@@ -66,7 +67,7 @@ public struct ToastModifier: ViewModifier {
     }
 
     private func dismissToast() {
-        //
+        // MEMO: Animationを伴って閉じる様な形を取る
         withAnimation {
             simpleToast = nil
         }
