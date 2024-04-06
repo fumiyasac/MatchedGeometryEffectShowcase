@@ -30,6 +30,10 @@
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
+		DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */; };
+		DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */; };
+		DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */; };
+		DE91D99E2BC12027008B2203 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D99D2BC12027008B2203 /* SampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularScreenViewController.storyboard; sourceTree = "<group>"; };
+		DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenViewController.swift; sourceTree = "<group>"; };
+		DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		DE91D99D2BC12027008B2203 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 				DE1A75DF2B86451900912224 /* StringExtension.swift */,
 				DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */,
 				DE1A75E32B86453E00912224 /* UIColorExtension.swift */,
+				DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,8 +192,8 @@
 		DE1A75C52B7E293D00912224 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */,
-				DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */,
+				DE91D9952BC113FA008B2203 /* PopularScreenView */,
+				DE91D9942BC113E7008B2203 /* PickupScreenView */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -213,6 +222,33 @@
 				DE1A75DB2B8644C300912224 /* StarRatingView.swift */,
 			);
 			path = StarRating;
+			sourceTree = "<group>";
+		};
+		DE91D9942BC113E7008B2203 /* PickupScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */,
+			);
+			path = PickupScreenView;
+			sourceTree = "<group>";
+		};
+		DE91D9952BC113FA008B2203 /* PopularScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D9962BC1141D008B2203 /* PopularScreenViewController */,
+				DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */,
+			);
+			path = PopularScreenView;
+			sourceTree = "<group>";
+		};
+		DE91D9962BC1141D008B2203 /* PopularScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */,
+				DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */,
+				DE91D99D2BC12027008B2203 /* SampleViewController.swift */,
+			);
+			path = PopularScreenViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */,
 				DE1A75B62B7B65BA00912224 /* Preview Assets.xcassets in Resources */,
 				DE1A75B32B7B65BA00912224 /* Assets.xcassets in Resources */,
 			);
@@ -298,6 +335,7 @@
 			files = (
 				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
 				DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */,
+				DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */,
 				DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */,
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
 				DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */,
@@ -311,7 +349,9 @@
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
 				DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */,
+				DE91D99E2BC12027008B2203 /* SampleViewController.swift in Sources */,
 				DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */,
+				DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,8 +491,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,8 +519,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
