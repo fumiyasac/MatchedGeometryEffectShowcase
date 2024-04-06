@@ -13,5 +13,7 @@ class SampleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupNavigationBarTitle("Sample")
     }
 }
