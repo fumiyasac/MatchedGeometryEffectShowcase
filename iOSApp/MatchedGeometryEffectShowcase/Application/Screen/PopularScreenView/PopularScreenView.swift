@@ -32,13 +32,9 @@ struct PopularScreenView: View {
 
 struct PopularScreenClassicView: UIViewControllerRepresentable {
 
-    // MARK: - Typealias
-
-    typealias UIViewControllerType = UINavigationController
-
     // MARK: - Function
 
-    func makeUIViewController(context: Context) -> UIViewControllerType {
+    func makeUIViewController(context: Context) -> UINavigationController {
 
         // MEMO: 表示対象の画面クラスをセットしたUINavigationControllerを返す
         let navigationController = UINavigationController()
@@ -49,7 +45,7 @@ struct PopularScreenClassicView: UIViewControllerRepresentable {
         return navigationController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
         Coordinator()

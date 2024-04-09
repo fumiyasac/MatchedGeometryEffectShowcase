@@ -26,7 +26,6 @@
 		DE1A75EB2B8A013800912224 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75EA2B8A013800912224 /* APIError.swift */; };
 		DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75EC2B8A019200912224 /* APIRequestState.swift */; };
 		DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75EE2B8A032900912224 /* HTTPMethod.swift */; };
-		DE1A75F22B8EFEA800912224 /* ContentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F12B8EFEA800912224 /* ContentRouter.swift */; };
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 		DE1A75EA2B8A013800912224 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DE1A75EC2B8A019200912224 /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
 		DE1A75EE2B8A032900912224 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		DE1A75F12B8EFEA800912224 /* ContentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRouter.swift; sourceTree = "<group>"; };
 		DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				DE1A75B02B7B65B900912224 /* ContentView.swift */,
-				DE1A75F12B8EFEA800912224 /* ContentRouter.swift */,
 				DE1A75E92B8A012400912224 /* Common */,
 				DE1A75C42B7E290B00912224 /* Components */,
 				DE1A75C22B7E289900912224 /* Entity */,
@@ -343,7 +340,6 @@
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
-				DE1A75F22B8EFEA800912224 /* ContentRouter.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
