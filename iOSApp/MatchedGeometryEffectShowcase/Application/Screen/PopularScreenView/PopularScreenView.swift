@@ -34,6 +34,7 @@ struct PopularScreenClassicView: UIViewControllerRepresentable {
 
     // MARK: - Function
 
+    // MEMO: UIViewRepresentableで提供されているメソッドと微妙に違う点に注意。
     func makeUIViewController(context: Context) -> UINavigationController {
 
         // MEMO: 表示対象の画面クラスをセットしたUINavigationControllerを返す
