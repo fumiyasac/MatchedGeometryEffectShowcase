@@ -37,6 +37,7 @@
 		DE91D9A22BCA85C5008B2203 /* PickupViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A12BCA85C5008B2203 /* PickupViewStateProvider.swift */; };
 		DE91D9A62BCA8C22008B2203 /* PopularDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9A52BCA8C22008B2203 /* PopularDetailHeaderView.xib */; };
 		DE91D9A82BCA8C34008B2203 /* PopularDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */; };
+		DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		DE91D9A12BCA85C5008B2203 /* PickupViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewStateProvider.swift; sourceTree = "<group>"; };
 		DE91D9A52BCA8C22008B2203 /* PopularDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDetailHeaderView.xib; sourceTree = "<group>"; };
 		DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDetailHeaderView.swift; sourceTree = "<group>"; };
+		DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				DE1A75EA2B8A013800912224 /* APIError.swift */,
 				DE1A75EC2B8A019200912224 /* APIRequestState.swift */,
 				DE1A75EE2B8A032900912224 /* HTTPMethod.swift */,
+				DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */,
 				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
 				DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */,
 				DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */,
