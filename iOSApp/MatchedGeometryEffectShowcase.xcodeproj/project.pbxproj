@@ -38,6 +38,7 @@
 		DE91D9A62BCA8C22008B2203 /* PopularDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9A52BCA8C22008B2203 /* PopularDetailHeaderView.xib */; };
 		DE91D9A82BCA8C34008B2203 /* PopularDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */; };
 		DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */; };
+		DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		DE91D9A52BCA8C22008B2203 /* PopularDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDetailHeaderView.xib; sourceTree = "<group>"; };
 		DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDetailHeaderView.swift; sourceTree = "<group>"; };
 		DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
+		DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		DE1A75C52B7E293D00912224 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DE91D9AB2BCC1A2F008B2203 /* GalleryScreenView */,
 				DE91D9952BC113FA008B2203 /* PopularScreenView */,
 				DE91D9942BC113E7008B2203 /* PickupScreenView */,
 			);
@@ -277,6 +280,14 @@
 				DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */,
 			);
 			path = PopularDetailHeaderView;
+			sourceTree = "<group>";
+		};
+		DE91D9AB2BCC1A2F008B2203 /* GalleryScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */,
+			);
+			path = GalleryScreenView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +387,7 @@
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
+				DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
 				DE91D9A02BCA85AD008B2203 /* PopularViewStateProvider.swift in Sources */,
 				DE91D9A22BCA85C5008B2203 /* PickupViewStateProvider.swift in Sources */,

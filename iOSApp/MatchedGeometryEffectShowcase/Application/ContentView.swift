@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             TabView {
-                //
+                // Pickupコンテンツ画面
                 PickupScreenView()
                     .tabItem {
                         VStack {
@@ -27,7 +27,7 @@ struct ContentView: View {
                         }
                     }
                     .tag(0)
-                //
+                // Popularコンテンツ画面
                 PopularScreenView()
                     .tabItem {
                         VStack {
@@ -35,6 +35,14 @@ struct ContentView: View {
                             Text("Popular")
                         }
                     }.tag(1)
+                // Galleryコンテンツ画面
+                GalleryScreenView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "tray.full.fill")
+                            Text("Gallery")
+                        }
+                    }.tag(2)
             }
             .accentColor(Color(uiColor: UIColor(code: "#869a42")))
         }
