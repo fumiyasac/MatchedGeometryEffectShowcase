@@ -39,6 +39,8 @@
 		DE91D9A82BCA8C34008B2203 /* PopularDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */; };
 		DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */; };
 		DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */; };
+		DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */; };
+		DE91D9B22BCD5FF0008B2203 /* GalleryScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		DE91D9A72BCA8C34008B2203 /* PopularDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDetailHeaderView.swift; sourceTree = "<group>"; };
 		DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
 		DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenView.swift; sourceTree = "<group>"; };
+		DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenViewController.swift; sourceTree = "<group>"; };
+		DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GalleryScreenViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,9 +289,19 @@
 		DE91D9AB2BCC1A2F008B2203 /* GalleryScreenView */ = {
 			isa = PBXGroup;
 			children = (
+				DE91D9AE2BCD5DB3008B2203 /* GalleryScreenViewController */,
 				DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */,
 			);
 			path = GalleryScreenView;
+			sourceTree = "<group>";
+		};
+		DE91D9AE2BCD5DB3008B2203 /* GalleryScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */,
+				DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */,
+			);
+			path = GalleryScreenViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE91D9B22BCD5FF0008B2203 /* GalleryScreenViewController.storyboard in Resources */,
 				DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */,
 				DE1A75B62B7B65BA00912224 /* Preview Assets.xcassets in Resources */,
 				DE91D9A62BCA8C22008B2203 /* PopularDetailHeaderView.xib in Resources */,
@@ -385,6 +400,7 @@
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
+				DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */,
