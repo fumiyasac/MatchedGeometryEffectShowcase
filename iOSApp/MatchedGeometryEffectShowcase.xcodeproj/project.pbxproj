@@ -41,6 +41,7 @@
 		DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */; };
 		DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */; };
 		DE91D9B22BCD5FF0008B2203 /* GalleryScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */; };
+		DE91D9B42BCEC41F008B2203 /* GalleryStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		DE91D9AC2BCC1A68008B2203 /* GalleryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenView.swift; sourceTree = "<group>"; };
 		DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenViewController.swift; sourceTree = "<group>"; };
 		DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GalleryScreenViewController.storyboard; sourceTree = "<group>"; };
+		DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryStateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				DE91D99F2BCA85AD008B2203 /* PopularViewStateProvider.swift */,
 				DE91D9A12BCA85C5008B2203 /* PickupViewStateProvider.swift */,
+				DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */,
 			);
 			path = ViewStateProvider;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */,
+				DE91D9B42BCEC41F008B2203 /* GalleryStateProvider.swift in Sources */,
 				DE1A75EF2B8A032900912224 /* HTTPMethod.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */,
