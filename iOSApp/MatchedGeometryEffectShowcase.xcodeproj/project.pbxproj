@@ -42,6 +42,8 @@
 		DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */; };
 		DE91D9B22BCD5FF0008B2203 /* GalleryScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */; };
 		DE91D9B42BCEC41F008B2203 /* GalleryStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */; };
+		DE91D9B72BD018AC008B2203 /* GalleryDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9B62BD018AC008B2203 /* GalleryDetailHeaderView.xib */; };
+		DE91D9B92BD018B7008B2203 /* GalleryDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9B82BD018B7008B2203 /* GalleryDetailHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreenViewController.swift; sourceTree = "<group>"; };
 		DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GalleryScreenViewController.storyboard; sourceTree = "<group>"; };
 		DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryStateProvider.swift; sourceTree = "<group>"; };
+		DE91D9B62BD018AC008B2203 /* GalleryDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryDetailHeaderView.xib; sourceTree = "<group>"; };
+		DE91D9B82BD018B7008B2203 /* GalleryDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,10 +305,20 @@
 		DE91D9AE2BCD5DB3008B2203 /* GalleryScreenViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE91D9B52BD0187C008B2203 /* GalleryDetailHeaderView */,
 				DE91D9B12BCD5FF0008B2203 /* GalleryScreenViewController.storyboard */,
 				DE91D9AF2BCD5FB4008B2203 /* GalleryScreenViewController.swift */,
 			);
 			path = GalleryScreenViewController;
+			sourceTree = "<group>";
+		};
+		DE91D9B52BD0187C008B2203 /* GalleryDetailHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D9B62BD018AC008B2203 /* GalleryDetailHeaderView.xib */,
+				DE91D9B82BD018B7008B2203 /* GalleryDetailHeaderView.swift */,
+			);
+			path = GalleryDetailHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +395,7 @@
 				DE1A75B62B7B65BA00912224 /* Preview Assets.xcassets in Resources */,
 				DE91D9A62BCA8C22008B2203 /* PopularDetailHeaderView.xib in Resources */,
 				DE1A75B32B7B65BA00912224 /* Assets.xcassets in Resources */,
+				DE91D9B72BD018AC008B2203 /* GalleryDetailHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +409,7 @@
 				DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */,
 				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
 				DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */,
+				DE91D9B92BD018B7008B2203 /* GalleryDetailHeaderView.swift in Sources */,
 				DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */,
 				DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */,
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
