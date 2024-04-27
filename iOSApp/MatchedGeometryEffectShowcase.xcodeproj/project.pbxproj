@@ -48,6 +48,7 @@
 		DE91D9BD2BD4F6CB008B2203 /* PopularViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BC2BD4F6CB008B2203 /* PopularViewObject.swift */; };
 		DE91D9BF2BD4F6ED008B2203 /* PickupViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */; };
 		DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */; };
+		DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		DE91D9BC2BD4F6CB008B2203 /* PopularViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewObject.swift; sourceTree = "<group>"; };
 		DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewObject.swift; sourceTree = "<group>"; };
 		DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 		DE91D9C02BDD43C2008B2203 /* FeedScreenView */ = {
 			isa = PBXGroup;
 			children = (
+				DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */,
 			);
 			path = FeedScreenView;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */,
 				DE91D99E2BC12027008B2203 /* SampleViewController.swift in Sources */,
 				DE91D9BF2BD4F6ED008B2203 /* PickupViewObject.swift in Sources */,
+				DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */,
 				DE91D9BB2BD4F5AE008B2203 /* GalleryViewObject.swift in Sources */,
 				DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */,
 				DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */,

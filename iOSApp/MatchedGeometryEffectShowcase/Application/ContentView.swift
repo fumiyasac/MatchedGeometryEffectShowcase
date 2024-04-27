@@ -18,6 +18,15 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             TabView {
+                // Feedコンテンツ画面
+                FeedScreenView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "book.pages.fill")
+                            Text("Feed")
+                        }
+                    }
+                    .tag(0)
                 // Pickupコンテンツ画面
                 PickupScreenView()
                     .tabItem {
@@ -26,7 +35,7 @@ struct ContentView: View {
                             Text("Pickup")
                         }
                     }
-                    .tag(0)
+                    .tag(1)
                 // Popularコンテンツ画面
                 PopularScreenView()
                     .tabItem {
@@ -34,7 +43,7 @@ struct ContentView: View {
                             Image(systemName: "photo.stack.fill")
                             Text("Popular")
                         }
-                    }.tag(1)
+                    }.tag(2)
                 // Galleryコンテンツ画面
                 GalleryScreenView()
                     .tabItem {
@@ -42,7 +51,7 @@ struct ContentView: View {
                             Image(systemName: "tray.full.fill")
                             Text("Gallery")
                         }
-                    }.tag(2)
+                    }.tag(3)
             }
             .accentColor(Color(uiColor: UIColor(code: "#869a42")))
         }
