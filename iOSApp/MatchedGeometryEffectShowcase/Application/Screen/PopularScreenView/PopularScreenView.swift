@@ -44,7 +44,7 @@ struct PopularScreenClassicView: UIViewControllerRepresentable {
         // MEMO: 表示対象の画面クラスをセットしたUINavigationControllerを返す
         let navigationController = UINavigationController()
         navigationController.pushViewController(
-            UIStoryboard(name: "PopularScreenViewController", bundle: nil).instantiateInitialViewController()!,
+            PopularScreenViewController.instantiate(),
             animated: false
         )
         return navigationController

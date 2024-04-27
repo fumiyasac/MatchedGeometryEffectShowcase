@@ -19,3 +19,18 @@ final class GalleryScreenViewController: UIViewController {
         removeBackButtonText()
     }
 }
+
+// MARK: - StoryboardInstantiatable
+
+extension GalleryScreenViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "GalleryScreenViewController"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return nil
+    }
+}

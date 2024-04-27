@@ -47,6 +47,7 @@
 		DE91D9BB2BD4F5AE008B2203 /* GalleryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BA2BD4F5AE008B2203 /* GalleryViewObject.swift */; };
 		DE91D9BD2BD4F6CB008B2203 /* PopularViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BC2BD4F6CB008B2203 /* PopularViewObject.swift */; };
 		DE91D9BF2BD4F6ED008B2203 /* PickupViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */; };
+		DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		DE91D9BA2BD4F5AE008B2203 /* GalleryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewObject.swift; sourceTree = "<group>"; };
 		DE91D9BC2BD4F6CB008B2203 /* PopularViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewObject.swift; sourceTree = "<group>"; };
 		DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewObject.swift; sourceTree = "<group>"; };
+		DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				DE1A75E12B86452A00912224 /* SwiftUIColorExtension.swift */,
 				DE1A75E32B86453E00912224 /* UIColorExtension.swift */,
 				DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */,
+				DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 		DE1A75C52B7E293D00912224 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DE91D9C02BDD43C2008B2203 /* FeedScreenView */,
 				DE91D9AB2BCC1A2F008B2203 /* GalleryScreenView */,
 				DE91D9952BC113FA008B2203 /* PopularScreenView */,
 				DE91D9942BC113E7008B2203 /* PickupScreenView */,
@@ -330,6 +334,13 @@
 			path = GalleryDetailHeaderView;
 			sourceTree = "<group>";
 		};
+		DE91D9C02BDD43C2008B2203 /* FeedScreenView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeedScreenView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,6 +435,7 @@
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
 				DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */,
 				DE1A75EB2B8A013800912224 /* APIError.swift in Sources */,
+				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,

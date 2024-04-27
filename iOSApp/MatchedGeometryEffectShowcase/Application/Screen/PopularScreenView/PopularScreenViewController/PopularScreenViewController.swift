@@ -19,3 +19,18 @@ final class PopularScreenViewController: UIViewController {
         removeBackButtonText()
     }
 }
+
+// MARK: - StoryboardInstantiatable
+
+extension PopularScreenViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "PopularScreenViewController"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return nil
+    }
+}
