@@ -22,7 +22,7 @@ struct ContentView: View {
                 FeedScreenView()
                     .tabItem {
                         VStack {
-                            Image(systemName: "book.pages.fill")
+                            Image(systemName: "house.fill")
                             Text("Feed")
                         }
                     }
@@ -31,7 +31,7 @@ struct ContentView: View {
                 PickupScreenView()
                     .tabItem {
                         VStack {
-                            Image(systemName: "tray.full.fill")
+                            Image(systemName: "book.pages.fill")
                             Text("Pickup")
                         }
                     }
