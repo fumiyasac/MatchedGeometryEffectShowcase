@@ -2,7 +2,7 @@
 
 (こちらは、GMOインターネットグループ有志による技術同人誌に寄稿した原稿になります。)
 
-## はじめに
+## 1. はじめに
 
 GMOペパボ株式会社の「ふみー」こと酒井文也と申します。普段はminne（ミンネ）事業部にて国内最大級のハンドメイドマーケットアプリ「minne」のモバイルアプリ開発に携わっており、現在ではiOS＆Androidアプリ双方の開発を担当しております。最近では、minneのモバイルアプリ開発を中心に据えつつ、過去のバックエンドエンジニアとしての経験を活かしてモバイルアプリに関連するRails実装コードの調査を行いました。また、業務外での活動として、モバイルアプリ開発に関連する勉強会への登壇や、技術書同人誌博覧会のコアスタッフを務めています。
 
@@ -19,21 +19,18 @@ GMOペパボ株式会社の「ふみー」こと酒井文也と申します。�
 
 このプロジェクトを始めた主な動機は、iOSアプリ開発における画面遷移の仕組みや考え方がSwiftUIとUIKitで大きく異なるため、これらの違いを考慮して同様の画面遷移アニメーションを実現するための重要ポイントを理解する必要があったからです。また、iOSアプリ開発に加えてAndroidアプリの開発も行っており、将来的にはFlutterにも取り組みたいと考えています。そのため、iOSとAndroidの相違点を把握することで、異なるプラットフォーム間での比較を容易にするという目的もありました。
 
-## UIKitを利用時のCustomTransition処理が難しい点
+## 2. UIKitを利用時のCustomTransition処理が難しい点
 
 UIKitを使用してCustomTransitionで画面遷移アニメーションをカスタマイズする場合、以下の3つのプロトコルと1つのクラスの理解が不可欠です。
 
-\vspace*{12pt}
-
-__【1. UIViewControllerAnimatedTransitioning】__
+__【2-1. UIViewControllerAnimatedTransitioning】__
 
 こちらは、画面遷移時のアニメーションを定義するためのProtocolになります。[^1]
 
-[^1]: https://developer.apple.com/documentation/uikit/uiviewcontrolleranimatedtransitioning
+https://developer.apple.com/documentation/uikit/uiviewcontrolleranimatedtransitioning
 
-\vspace*{12pt}
 
-__【2. UIViewControllerContextTransitioning】__
+__【2-2. UIViewControllerContextTransitioning】__
 
 こちらは、画面遷移コンテキストを伝えるためのProtocolになります。[^2]
 
@@ -41,17 +38,13 @@ __【2. UIViewControllerContextTransitioning】__
 
 [^2]: https://developer.apple.com/documentation/uikit/uiviewcontrollercontexttransitioning
 
-\vspace*{12pt}
-
-__【3. UIViewControllerTransitioningDelegate】__
+__【2-3. UIViewControllerTransitioningDelegate】__
 
 こちらは、画面遷移時の進む場合と戻る場合の処理を実装するためのProtocolになります。[^3]
 
 [^3]: https://developer.apple.com/documentation/uikit/uipercentdriveninteractivetransition
 
-\vspace*{12pt}
-
-__【4. UIPercentDrivenInteractiveTransition】__
+__【2-4. UIPercentDrivenInteractiveTransition】__
 
 こちらは、インタラクティブな画面遷移を実装するためのClassになります。[^4]
 
@@ -60,8 +53,6 @@ __【4. UIPercentDrivenInteractiveTransition】__
 [^4]: https://developer.apple.com/documentation/uikit/uipercentdriveninteractivetransition
 
 これらの処理を効果的に活用することで、画面遷移時のアニメーションをカスタマイズし、指の動きに追従する滑らかで一貫性のある画面遷移を実現できます。しかし、特に複雑なアニメーションを設計する場合、考慮すべき多くの要素があります。
-
-\vspace*{12pt}
 
 __【余談. 取り組み始めた時に難しく感じた点】__
 
@@ -72,7 +63,7 @@ __【余談. 取り組み始めた時に難しく感じた点】__
 
 コードを見ただけでは、実装が要件を満たしているかの確認が難しいことがあります。そのため、デバッグ時には実機での確認と調整をこまめに行う必要があります。
 
-## UIKitを利用時のCustomTransitionの基本事項整理＆復習
+## 3. UIKitを利用時のCustomTransitionの基本事項整理＆復習
 
 まずは、CustomTransition処理において最低限押さえるべき事項を確認するために「Present/Dismiss」の画面遷移時において画面要素の大きさやアルファ値を変化させるアニメーション実装について考えてみます。NSObjectを継承し、`UIViewControllerAnimatedTransitioning`に準拠したクラスを準備します。そして、`func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {...}`の処理内で、画面遷移時に実行したいアニメーション処理を組み立てていく様な流れとなります（※必要に応じて、画面遷移処理前に遷移元の値が必要な場合はクラス内に定義した変数を利用する形にすると良さそうに思います）。`UIViewControllerContextTransitioning`では、遷移元及び遷移先の情報が格納されているので、
 
@@ -186,13 +177,11 @@ extension MainViewController: UIViewControllerTransitioningDelegate {
 
 このように、CustomTransitionを効果的に実装するには、画面情報を活用してアニメーション処理を定義したクラスを作成し、それを遷移元のViewControllerが画面遷移を実行するタイミングで適用します。この流れを把握することで、全体の構成がより理解しやすくなるのではないかと思います。
 
-\newpage
-
-## UINavigationControllerを伴う画面遷移をカスタマイズ時のポイント
+## 4. UINavigationControllerを伴う画面遷移をカスタマイズ時のポイント
 
 次に、UICollectionViewを利用してサムネイル画像を一覧表示している画面上から、CustomTransitionを利用してサムネイル画像が浮かび上がってくる様なアニメーション処理を「Push/Pop」の画面遷移時に加えるための実装について考えてみます。
 
-![美しいアニメーションであるが考慮事項も多く難しい表現の1つ](images/08-fumy/01-introduction-of-navigation-transition.png)
+![美しいアニメーションであるが考慮事項も多く難しい表現の1つ](images/01-introduction-of-navigation-transition.png)
 
 このような動きを実現するため、画面遷移アニメーションクラスの実装では、遷移元からサムネイル画像や位置情報などの要素を取得し、これらを画面遷移のアニメーションで活用することが重要です。
 
@@ -493,15 +482,13 @@ Push/Pop画面遷移において、CustomTransition及びInteractiveTransition�
 
 最後に、CustomTransitionを活用した処理に関連しそうなアイデアに関する図解を掲載しておきますので、こちらも併せて参考にして頂けると幸いです。
 
-\vspace*{12pt}
-
 __【補足1. ダミーのHeader要素を追加してScrollに追従する動きを実現する】__
 
 こちらで紹介しているのは、UINavigationBar自体を拡張せずにNavigation表示部分をカスタマイズする際のアイデアになります。
 
 UINavigationBar内部へ独自に作成したダミーのHeader要素を追加する事で、Scroll変化量と連動してダミーのHeader要素内部に@IBOutletに設定した制約を変化させる事で、あたかもスクロールに追従しながらタイトルが下から表示される様な演出をする点がポイントになります。だだし、UINavigationに関連する表示をカスタマイズする際は、遷移先の画面への影響や適用範囲についても十分に配慮が必要な点には注意が必要です。
 
-![UINavigationBar内にView要素を追加する点がポイント](images/08-fumy/02-navigationbar-customize-idea.png)
+![UINavigationBar内にView要素を追加する点がポイント](images/02-navigationbar-customize-idea.png)
 
 __【補足2. View要素内の特定の情報を取得する方法例】__
 
@@ -509,7 +496,7 @@ CustomTransitionでの画面遷移アニメーションにおいて、遷移先�
 
 ※ 図解ではGUI（Interface Builder）を利用した設定方法を掲載をしていますが、勿論コードでも設定可能です。
 
-![この方法であれば`private`な要素でも取得可能](images/08-fumy/03-get-elements-from-tag.png)
+![この方法であれば`private`な要素でも取得可能](images/03-get-elements-from-tag.png)
 
 __【補足3. 画面を引っ張って閉じる動きを作る＆画面構造の工夫例】__
 
@@ -517,11 +504,11 @@ __【補足3. 画面を引っ張って閉じる動きを作る＆画面構造の
 
 CustomTransitionを利用した画面遷移アニメーションと引っ張って閉じる動作を組み合わせる事で、触り心地の良い形を演出する余地もありそうなので、私自身も今後とも機能と上手に調和する形は追求していきたいと思います。
 
-![引っ張って閉じる表現も触り心地が良い表現の1つ](images/08-fumy/04-pull-to-close-screen.png)
+![引っ張って閉じる表現も触り心地が良い表現の1つ](images/04-pull-to-close-screen.png)
 
 また、画面全体をUIScrollViewで構成した画面において（補足1）の様にダミーのHeader要素を追加してScrollに追従する動きを実現する際は後述する図解の様な構成にしても良いかもしれません。この様な処理を考えていく際には、画面を構成するためのUI要素配置と更新対象となるAutoLayout制約を整理する事も重要な観点となります。
 
-![配置要素とその重なり順番に注意して処理を組み立てる](images/08-fumy/05-screen-structure-with-scrollview.png)
+![配置要素とその重なり順番に注意して処理を組み立てる](images/05-screen-structure-with-scrollview.png)
 
 これらの点を踏まえた、Scroll変化量と連動するUI要素部分の実装イメージは、後述するコードの様な形となります。
 
@@ -600,13 +587,13 @@ extension DetailViewController: UIScrollViewDelegate {
 }
 ```
 
-## SwiftUI製のView要素やAndroid等での類似表現をするヒント
+## 5. SwiftUI製のView要素やAndroid等での類似表現をするヒント
 
-__【1. SwiftUI製のView要素でCustomTransitionの様な表現をするには？】__
+__【5-1. SwiftUI製のView要素でCustomTransitionの様な表現をするには？】__
 
 `matchedGeometryEffect(id:in:properties:anchor:isSource:)`[^7]を利用する事によって、これまで解説してきた形の画面遷移アニメーションに類似した形を実現する事が可能です。
 
-[^7]: https://x.gd/ZAoZJ
+[^7]: https://developer.apple.com/documentation/swiftui/view/matchedgeometryeffect(id:in:properties:anchor:issource:)
 
 ```swift
 func matchedGeometryEffect<ID>(
@@ -677,7 +664,7 @@ struct TrendArticlesGridView: View {
 }
 ```
 
-![画面遷移というよりも重ねる形となる点がポイント](images/08-fumy/06-matched-geometry-effect-image.png)
+![画面遷移というよりも重ねる形となる点がポイント](images/06-matched-geometry-effect-image.png)
 
 ※参考資料はこちらになります。
 
@@ -695,7 +682,7 @@ struct TrendArticlesGridView: View {
 [^12]: https://swiftui-lab.com/matchedgeometryeffect-part2/
 [^13]: https://github.com/swiftui-lab/swiftui-hero-animations-no-transitions
 
-__【2. Androidでの画面遷移時のアニメーション処理例】__
+__【5-2. Androidでの画面遷移時のアニメーション処理例】__
 
 ※ 本章ではAndroidアプリ開発においてXMLを利用したレイアウトを利用している想定で、2つのActivity間における画面遷移処理を想定したものになります。
 
@@ -733,7 +720,7 @@ itemGridView.setOnClickListener {
 [^15]: https://developer.android.com/develop/ui/views/animations/transitions/start-activity
 [^16]: https://developers.cyberagent.co.jp/blog/archives/9291/
 
-__【3. Flutterでの画面遷移時のアニメーション処理例】__
+__【5-3. Flutterでの画面遷移時のアニメーション処理例】__
 
 Flutterで画像がタップ時に大きくなりながら画面遷移するアニメーションを実装するには、遷移元と遷移先の両画面に配置されたアニメーション対象の要素に`Hero`ウィジェットを適用します。このウィジェットの利用方法や実装方針は、公式ドキュメントで詳しく解説されています。本章ではその詳細な解説を割愛しますが、iOSのOSSライブラリ「Hero」と同様に、直感的でシンプルな方法でサムネイル画像が浮かび上がるようなアニメーションを実現できる点が個人的にありがたいと感じております。
 
@@ -741,7 +728,7 @@ Flutterで画像がタップ時に大きくなりながら画面遷移するア�
 
 [^17]: https://docs.flutter.dev/ui/animations/hero-animations
 
-## まとめ
+## 6. まとめ
 
 UIKit利用時におけるCustomTransitionを利用した画面遷移アニメーションのカスタマイズ処理は、利用するメソッド名も長い＆類似した名前が多いため、最初は複雑で取っ付きづらい印象を持つかもしれませんが、カスタマイズ方法を知った上でその表現を上手に応用または活用する事によって、モバイルアプリ内における心地よい表現や体験・アクセントとなる要素を追加する事ができます。本章で紹介した処理やコード例については、画面遷移アニメーションを実現するために最低限押さえておきたい処理のポイントになりますが、理解を進めていくにあたっては、
 
@@ -758,9 +745,7 @@ UIKit利用時におけるCustomTransitionを利用した画面遷移アニメ�
 
 UIKitの画面遷移処理については、各種アニメーションに関する処理に加えて、UIPanGestureRecognizer等を組み合わせる事によって、指の動きとも連動した画面を閉じる処理を実現可能です。これらの表現を上手に活用する事で得られる「画面遷移処理と連動した滑らかで触り心地の良いアニメーションやインタラクションを伴った演出」は、モバイルアプリ開発における大きな醍醐味の1つと言えます。
 
-\vspace*{12pt}
-
-__【画面遷移とインタラクションを伴う処理の参考資料】__
+__【補足. 画面遷移とインタラクションを伴う処理の参考資料】__
 
 - 触り心地の良いInteractiveTransitionをマスターしよう[^18] (※iOSDC2017での「shunkitan様」の登壇内容になります!)
 
