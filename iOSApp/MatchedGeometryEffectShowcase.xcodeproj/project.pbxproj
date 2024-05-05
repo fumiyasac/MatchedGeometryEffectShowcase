@@ -170,6 +170,7 @@
 			);
 			path = ViewStateProvider;
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		DE1A75BF2B7E283D00912224 /* Extension */ = {
 			isa = PBXGroup;
