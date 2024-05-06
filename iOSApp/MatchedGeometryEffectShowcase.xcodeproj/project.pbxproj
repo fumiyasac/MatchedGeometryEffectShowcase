@@ -50,6 +50,7 @@
 		DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */; };
 		DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */; };
 		DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */; };
+		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreenView.swift; sourceTree = "<group>"; };
 		DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
+		DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewStateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				DE91D99F2BCA85AD008B2203 /* PopularViewStateProvider.swift */,
 				DE91D9A12BCA85C5008B2203 /* PickupViewStateProvider.swift */,
 				DE91D9B32BCEC41F008B2203 /* GalleryStateProvider.swift */,
+				DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */,
 			);
 			path = ViewStateProvider;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
 				DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */,
 				DE1A75EB2B8A013800912224 /* APIError.swift in Sources */,
+				DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */,
 				DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */,
 				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
