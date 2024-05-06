@@ -49,6 +49,7 @@
 		DE91D9BF2BD4F6ED008B2203 /* PickupViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */; };
 		DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */; };
 		DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */; };
+		DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		DE91D9BE2BD4F6ED008B2203 /* PickupViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewObject.swift; sourceTree = "<group>"; };
 		DE91D9C12BDD44AE008B2203 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreenView.swift; sourceTree = "<group>"; };
+		DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 				DE1A75EC2B8A019200912224 /* APIRequestState.swift */,
 				DE1A75EE2B8A032900912224 /* HTTPMethod.swift */,
 				DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */,
+				DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
 				DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */,
 				DE1A75EB2B8A013800912224 /* APIError.swift in Sources */,
+				DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */,
 				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
