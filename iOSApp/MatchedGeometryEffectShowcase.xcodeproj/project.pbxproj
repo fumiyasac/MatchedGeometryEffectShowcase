@@ -29,6 +29,7 @@
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
+		DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */; };
 		DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */; };
 		DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */; };
 		DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */; };
@@ -53,6 +54,16 @@
 		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE61C9402C203C3F0058FEEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE1A75A32B7B65B900912224 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1A75AA2B7B65B900912224;
+			remoteInfo = MatchedGeometryEffectShowcase;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchedGeometryEffectShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1A75AE2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectShowcaseApp.swift; sourceTree = "<group>"; };
@@ -72,6 +83,8 @@
 		DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedGeometryEffectShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectShowcaseTests.swift; sourceTree = "<group>"; };
 		DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularScreenViewController.storyboard; sourceTree = "<group>"; };
 		DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenViewController.swift; sourceTree = "<group>"; };
 		DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -109,6 +122,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE61C9392C203C3F0058FEEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1A75AD2B7B65B900912224 /* MatchedGeometryEffectShowcase */,
+				DE61C93D2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */,
 				DE1A75AC2B7B65B900912224 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */,
+				DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +292,14 @@
 			path = StarRating;
 			sourceTree = "<group>";
 		};
+		DE61C93D2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */,
+			);
+			path = MatchedGeometryEffectShowcaseTests;
+			sourceTree = "<group>";
+		};
 		DE91D9942BC113E7008B2203 /* PickupScreenView */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +408,24 @@
 			productReference = DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DE61C93B2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE61C9422C203C3F0058FEEF /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectShowcaseTests" */;
+			buildPhases = (
+				DE61C9382C203C3F0058FEEF /* Sources */,
+				DE61C9392C203C3F0058FEEF /* Frameworks */,
+				DE61C93A2C203C3F0058FEEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE61C9412C203C3F0058FEEF /* PBXTargetDependency */,
+			);
+			name = MatchedGeometryEffectShowcaseTests;
+			productName = MatchedGeometryEffectShowcaseTests;
+			productReference = DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -385,11 +433,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					DE1A75AA2B7B65B900912224 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					DE61C93B2C203C3F0058FEEF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DE1A75AA2B7B65B900912224;
 					};
 				};
 			};
@@ -411,6 +463,7 @@
 			projectRoot = "";
 			targets = (
 				DE1A75AA2B7B65B900912224 /* MatchedGeometryEffectShowcase */,
+				DE61C93B2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,6 +479,13 @@
 				DE91D9A62BCA8C22008B2203 /* PopularDetailHeaderView.xib in Resources */,
 				DE1A75B32B7B65BA00912224 /* Assets.xcassets in Resources */,
 				DE91D9B72BD018AC008B2203 /* GalleryDetailHeaderView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE61C93A2C203C3F0058FEEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +532,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE61C9382C203C3F0058FEEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE61C9412C203C3F0058FEEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1A75AA2B7B65B900912224 /* MatchedGeometryEffectShowcase */;
+			targetProxy = DE61C9402C203C3F0058FEEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DE1A75B72B7B65BA00912224 /* Debug */ = {
@@ -609,6 +685,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,6 +714,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,6 +725,44 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE61C9432C203C3F0058FEEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.MatchedGeometryEffectShowcaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectShowcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectShowcase";
+			};
+			name = Debug;
+		};
+		DE61C9442C203C3F0058FEEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.MatchedGeometryEffectShowcaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectShowcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectShowcase";
 			};
 			name = Release;
 		};
@@ -667,6 +783,15 @@
 			buildConfigurations = (
 				DE1A75BA2B7B65BA00912224 /* Debug */,
 				DE1A75BB2B7B65BA00912224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE61C9422C203C3F0058FEEF /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectShowcaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE61C9432C203C3F0058FEEF /* Debug */,
+				DE61C9442C203C3F0058FEEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
