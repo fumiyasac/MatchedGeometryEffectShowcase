@@ -30,6 +30,7 @@
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
 		DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */; };
+		DE61C9482C2140150058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C9472C2140150058FEEF /* Testing */; };
 		DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */; };
 		DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */; };
 		DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */; };
@@ -126,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE61C9482C2140150058FEEF /* Testing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,7 @@
 				DE1A75AD2B7B65B900912224 /* MatchedGeometryEffectShowcase */,
 				DE61C93D2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */,
 				DE1A75AC2B7B65B900912224 /* Products */,
+				DE61C9462C2140150058FEEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +303,13 @@
 			path = MatchedGeometryEffectShowcaseTests;
 			sourceTree = "<group>";
 		};
+		DE61C9462C2140150058FEEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE91D9942BC113E7008B2203 /* PickupScreenView */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +432,9 @@
 				DE61C9412C203C3F0058FEEF /* PBXTargetDependency */,
 			);
 			name = MatchedGeometryEffectShowcaseTests;
+			packageProductDependencies = (
+				DE61C9472C2140150058FEEF /* Testing */,
+			);
 			productName = MatchedGeometryEffectShowcaseTests;
 			productReference = DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -457,6 +470,7 @@
 			packageReferences = (
 				DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */,
 				DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */,
 			);
 			productRefGroup = DE1A75AC2B7B65B900912224 /* Products */;
 			projectDirPath = "";
@@ -815,6 +829,14 @@
 				minimumVersion = 25.0.1;
 			};
 		};
+		DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -842,6 +864,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		DE61C9472C2140150058FEEF /* Testing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */;
+			productName = Testing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
