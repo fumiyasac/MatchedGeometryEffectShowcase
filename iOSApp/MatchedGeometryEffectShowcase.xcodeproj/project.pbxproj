@@ -31,6 +31,8 @@
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
 		DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */; };
 		DE61C9482C2140150058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C9472C2140150058FEEF /* Testing */; };
+		DE61C9592C28546B0058FEEF /* UserPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */; };
+		DE61C95B2C28560D0058FEEF /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C95A2C28560D0058FEEF /* ProductEntity.swift */; };
 		DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */; };
 		DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */; };
 		DE91D99C2BC11885008B2203 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */; };
@@ -86,6 +88,8 @@
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedGeometryEffectShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectShowcaseTests.swift; sourceTree = "<group>"; };
+		DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoEntity.swift; sourceTree = "<group>"; };
+		DE61C95A2C28560D0058FEEF /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
 		DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularScreenViewController.storyboard; sourceTree = "<group>"; };
 		DE91D9992BC11575008B2203 /* PopularScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenViewController.swift; sourceTree = "<group>"; };
 		DE91D99B2BC11885008B2203 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		DE1A75C22B7E289900912224 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DE61C95A2C28560D0058FEEF /* ProductEntity.swift */,
+				DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				DE1A75E02B86451900912224 /* StringExtension.swift in Sources */,
 				DE1A75ED2B8A019200912224 /* APIRequestState.swift in Sources */,
 				DE1A75EB2B8A013800912224 /* APIError.swift in Sources */,
+				DE61C9592C28546B0058FEEF /* UserPhotoEntity.swift in Sources */,
 				DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */,
 				DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */,
 				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
@@ -541,6 +548,7 @@
 				DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */,
 				DE91D9BB2BD4F5AE008B2203 /* GalleryViewObject.swift in Sources */,
 				DE1A75E62B878D0B00912224 /* APIClientManager.swift in Sources */,
+				DE61C95B2C28560D0058FEEF /* ProductEntity.swift in Sources */,
 				DE91D99A2BC11575008B2203 /* PopularScreenViewController.swift in Sources */,
 				DE91D9BD2BD4F6CB008B2203 /* PopularViewObject.swift in Sources */,
 			);
