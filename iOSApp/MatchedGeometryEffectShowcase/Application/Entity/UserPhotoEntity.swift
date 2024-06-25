@@ -7,4 +7,15 @@
 
 import Foundation
 
-struct UserPhotoEntity {}
+struct UserPhotoEntity {
+
+    // MARK: - Property
+
+    let identifier: UUID = UUID()
+    let userPhotoID: Int
+    let category: String
+    let title: String
+    let catchCopy: String
+    let descriptionText: String
+    let userPhotoUrl: URL?
+}
