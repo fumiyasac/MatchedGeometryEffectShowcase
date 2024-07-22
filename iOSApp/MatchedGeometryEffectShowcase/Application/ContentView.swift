@@ -19,6 +19,7 @@ struct ContentView: View {
         ZStack {
             TabView {
                 // Feedコンテンツ画面
+                // ※ SwiftUI製画面
                 FeedScreenView()
                     .tabItem {
                         VStack {
@@ -28,6 +29,7 @@ struct ContentView: View {
                     }
                     .tag(0)
                 // Pickupコンテンツ画面
+                // ※ SwiftUI製画面
                 PickupScreenView()
                     .tabItem {
                         VStack {
@@ -37,6 +39,7 @@ struct ContentView: View {
                     }
                     .tag(1)
                 // Popularコンテンツ画面
+                // ※ UIKit製画面
                 PopularScreenView()
                     .tabItem {
                         VStack {
@@ -45,6 +48,7 @@ struct ContentView: View {
                         }
                     }.tag(2)
                 // Galleryコンテンツ画面
+                // ※ UIKit製画面
                 GalleryScreenView()
                     .tabItem {
                         VStack {
