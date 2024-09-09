@@ -481,6 +481,7 @@
 				DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */,
 				DE24442C2C36E42200379EB8 /* XCRemoteSwiftPackageReference "CombineExpectations" */,
+				DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			productRefGroup = DE1A75AC2B7B65B900912224 /* Products */;
 			projectDirPath = "";
@@ -847,6 +848,14 @@
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
 			};
 		};
 		DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */ = {
