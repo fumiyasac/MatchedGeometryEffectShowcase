@@ -1,15 +1,6 @@
 {
-  "originHash" : "960cf63291197135efc459fdf34976d765bf4199b81fe2e83f0ba7b1701b5dcc",
+  "originHash" : "f2a1fdc4b23321a3854a34e9097824c165cbeaf6452ffff2598a2d4085201631",
   "pins" : [
-    {
-      "identity" : "combineexpectations",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/groue/CombineExpectations",
-      "state" : {
-        "branch" : "master",
-        "revision" : "04d4e4b21c9e8361925f03f64a7ecda89ef9974f"
-      }
-    },
     {
       "identity" : "cosmos",
       "kind" : "remoteSourceControl",

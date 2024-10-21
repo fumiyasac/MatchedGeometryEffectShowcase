@@ -5,14 +5,13 @@
 //  Created by 酒井文也 on 2024/06/17.
 //
 
-import XCTest
 import Testing
+import XCTest
 
-final class AllTests: XCTestCase {
-
-    // MARK: - Function
-
-    func testAll() async {
-        await XCTestScaffold.runAllTests(hostedBy: self)
+// MEMO: こちらは
+@Suite("MatchedGeometryEffectShowcaseTests") actor MatchedGeometryEffectShowcaseTests {
+    
+    @Test("Example Tests") func sample() {
+        // TODO: Do Something ...
     }
 }
