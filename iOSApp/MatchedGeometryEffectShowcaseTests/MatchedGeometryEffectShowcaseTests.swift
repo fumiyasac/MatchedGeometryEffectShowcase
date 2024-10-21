@@ -8,7 +8,7 @@
 import Testing
 import XCTest
 
-// MEMO: こちらは
+// MEMO: 
 @Suite("MatchedGeometryEffectShowcaseTests") actor MatchedGeometryEffectShowcaseTests {
     
     @Test("Example Tests") func sample() {
