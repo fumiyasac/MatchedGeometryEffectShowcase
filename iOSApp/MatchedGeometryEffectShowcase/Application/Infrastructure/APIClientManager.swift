@@ -1,5 +1,26 @@
 import Foundation
 
+// MARK: - Enum
+
+// MEMO: APIエラーメッセージに関するEnum定義
+enum APIError: Error {
+    case error(message: String)
+}
+
+// MEMO: APIリクエスト状態に関するEnum定義
+enum APIRequestState {
+    case none
+    case requesting
+    case success
+    case error
+}
+
+// MEMO: APIリクエストに関するEnum定義
+enum HTTPMethod {
+    case GET
+    case POST
+}
+
 // MARK: - Protocol
 
 protocol APIClientManagerProtocol {
