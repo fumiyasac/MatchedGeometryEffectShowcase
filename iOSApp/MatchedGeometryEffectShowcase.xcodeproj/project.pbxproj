@@ -52,6 +52,7 @@
 		DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */; };
 		DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */; };
 		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
+		DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = DEF3BBE72CDC36B4007B2D9A /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */,
 				DE1A75D42B84D5C200912224 /* Cosmos in Frameworks */,
 				DE1A75CC2B7FAC4700912224 /* NukeUI in Frameworks */,
 				DE1A75C82B7FAC4700912224 /* Nuke in Frameworks */,
@@ -410,6 +412,7 @@
 				DE1A75CB2B7FAC4700912224 /* NukeUI */,
 				DE1A75CD2B7FAC4700912224 /* NukeVideo */,
 				DE1A75D32B84D5C200912224 /* Cosmos */,
+				DEF3BBE72CDC36B4007B2D9A /* Shimmer */,
 			);
 			productName = MatchedGeometryEffectShowcase;
 			productReference = DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */;
@@ -874,6 +877,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */;
 			productName = Testing;
+		};
+		DEF3BBE72CDC36B4007B2D9A /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
