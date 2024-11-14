@@ -53,6 +53,7 @@
 		DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */; };
 		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
 		DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = DEF3BBE72CDC36B4007B2D9A /* Shimmer */; };
+		DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC352CE65596007B2D9A /* NewsEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreenView.swift; sourceTree = "<group>"; };
 		DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
 		DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewStateProvider.swift; sourceTree = "<group>"; };
+		DEF3BC352CE65596007B2D9A /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		DE1A75C22B7E289900912224 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DEF3BC352CE65596007B2D9A /* NewsEntity.swift */,
 				DE61C95A2C28560D0058FEEF /* ProductEntity.swift */,
 				DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */,
 			);
@@ -529,6 +532,7 @@
 				DE61C9592C28546B0058FEEF /* UserPhotoEntity.swift in Sources */,
 				DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */,
 				DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */,
+				DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */,
 				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
