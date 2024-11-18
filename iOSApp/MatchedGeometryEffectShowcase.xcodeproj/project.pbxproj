@@ -54,6 +54,7 @@
 		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
 		DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = DEF3BBE72CDC36B4007B2D9A /* Shimmer */; };
 		DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC352CE65596007B2D9A /* NewsEntity.swift */; };
+		DEF3BC3A2CE659F1007B2D9A /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorView.swift; sourceTree = "<group>"; };
 		DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewStateProvider.swift; sourceTree = "<group>"; };
 		DEF3BC352CE65596007B2D9A /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
+		DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 		DE1A75C22B7E289900912224 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */,
 				DEF3BC352CE65596007B2D9A /* NewsEntity.swift */,
 				DE61C95A2C28560D0058FEEF /* ProductEntity.swift */,
 				DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */,
@@ -540,6 +543,7 @@
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
 				DE91D9B02BCD5FB4008B2203 /* GalleryScreenViewController.swift in Sources */,
 				DE91D9B42BCEC41F008B2203 /* GalleryStateProvider.swift in Sources */,
+				DEF3BC3A2CE659F1007B2D9A /* PickupPhotoEntity.swift in Sources */,
 				DE1A75DE2B86450400912224 /* FirstAppearExtension.swift in Sources */,
 				DE91D9AD2BCC1A69008B2203 /* GalleryScreenView.swift in Sources */,
 				DE1A75AF2B7B65B900912224 /* MatchedGeometryEffectShowcaseApp.swift in Sources */,
