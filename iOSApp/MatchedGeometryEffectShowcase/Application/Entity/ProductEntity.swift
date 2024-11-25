@@ -20,8 +20,8 @@ struct ProductEntity {
     let productName: String
     let productSummary: String
     let productDescription: String
-    let mainCategory: String
-    let subCategory: String
-    let hashtags: [String]
+    let productMainCategory: String
+    let productSubCategory: String
+    let productHashtags: [String]
     let productPhotoUrl: URL?
 }

@@ -55,6 +55,7 @@
 		DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = DEF3BBE72CDC36B4007B2D9A /* Shimmer */; };
 		DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC352CE65596007B2D9A /* NewsEntity.swift */; };
 		DEF3BC3A2CE659F1007B2D9A /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */; };
+		DEF6E1DE2CF4B6B3007FBD4A /* PopularArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewStateProvider.swift; sourceTree = "<group>"; };
 		DEF3BC352CE65596007B2D9A /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoEntity.swift; sourceTree = "<group>"; };
+		DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularArticleEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,8 +240,9 @@
 		DE1A75C22B7E289900912224 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */,
 				DEF3BC352CE65596007B2D9A /* NewsEntity.swift */,
+				DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */,
+				DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */,
 				DE61C95A2C28560D0058FEEF /* ProductEntity.swift */,
 				DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */,
 			);
@@ -538,6 +541,7 @@
 				DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */,
 				DE91D9C22BDD44AE008B2203 /* StoryboardInstantiatable.swift in Sources */,
 				DE1A75E42B86453E00912224 /* UIColorExtension.swift in Sources */,
+				DEF6E1DE2CF4B6B3007FBD4A /* PopularArticleEntity.swift in Sources */,
 				DE1A75E22B86452A00912224 /* SwiftUIColorExtension.swift in Sources */,
 				DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */,
 				DE1A75B12B7B65B900912224 /* ContentView.swift in Sources */,
