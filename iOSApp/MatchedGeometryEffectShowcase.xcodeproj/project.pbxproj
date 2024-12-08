@@ -56,6 +56,7 @@
 		DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC352CE65596007B2D9A /* NewsEntity.swift */; };
 		DEF3BC3A2CE659F1007B2D9A /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */; };
 		DEF6E1DE2CF4B6B3007FBD4A /* PopularArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */; };
+		DEF6E1E52D05BA70007FBD4A /* ListShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6E1E42D05BA70007FBD4A /* ListShimmerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		DEF3BC352CE65596007B2D9A /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPhotoEntity.swift; sourceTree = "<group>"; };
 		DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularArticleEntity.swift; sourceTree = "<group>"; };
+		DEF6E1E42D05BA70007FBD4A /* ListShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShimmerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 			children = (
 				DE91D9A92BCC0ACB008B2203 /* CustomViewBase.swift */,
 				DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */,
+				DEF6E1E42D05BA70007FBD4A /* ListShimmerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF6E1E52D05BA70007FBD4A /* ListShimmerView.swift in Sources */,
 				DE91D9AA2BCC0ACB008B2203 /* CustomViewBase.swift in Sources */,
 				DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */,
 				DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */,
