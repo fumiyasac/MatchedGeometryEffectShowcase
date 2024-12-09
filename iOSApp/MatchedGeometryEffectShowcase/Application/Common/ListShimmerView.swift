@@ -7,11 +7,26 @@
 
 import SwiftUI
 
+// TODO: Color/Fontはデザインは後程決める
+
 struct ListShimmerView: View {
+
+    // MARK: - Typealias
+
+    // MARK: - Property
+
+    // MARK: - Initializer
+
+    init() {}
+
+    // MARK: - Body
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("ListShimmerView")
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ListShimmerView()

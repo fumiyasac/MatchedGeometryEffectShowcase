@@ -80,6 +80,8 @@ struct ConnectionErrorView: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     ConnectionErrorView(tapButtonAction: {})
 }
