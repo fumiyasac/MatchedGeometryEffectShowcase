@@ -1,5 +1,5 @@
 //
-//  ListShimmerView.swift
+//  PickupScreenShimmerView.swift
 //  MatchedGeometryEffectShowcase
 //
 //  Created by 酒井文也 on 2024/12/08.
@@ -9,7 +9,7 @@ import SwiftUI
 
 // TODO: Color/Fontはデザインは後程決める
 
-struct ListShimmerView: View {
+struct PickupScreenShimmerView: View {
 
     // MARK: - Typealias
 
@@ -22,12 +22,12 @@ struct ListShimmerView: View {
     // MARK: - Body
 
     var body: some View {
-        Text("ListShimmerView")
+        Text("PickupScreenShimmerView")
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    ListShimmerView()
+    PickupScreenShimmerView()
 }
