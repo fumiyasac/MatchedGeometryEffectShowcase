@@ -12,9 +12,7 @@
 		DE1A75B32B7B65BA00912224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1A75B22B7B65BA00912224 /* Assets.xcassets */; };
 		DE1A75B62B7B65BA00912224 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1A75B52B7B65BA00912224 /* Preview Assets.xcassets */; };
 		DE1A75C82B7FAC4700912224 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75C72B7FAC4700912224 /* Nuke */; };
-		DE1A75CA2B7FAC4700912224 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75C92B7FAC4700912224 /* NukeExtensions */; };
 		DE1A75CC2B7FAC4700912224 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75CB2B7FAC4700912224 /* NukeUI */; };
-		DE1A75CE2B7FAC4700912224 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75CD2B7FAC4700912224 /* NukeVideo */; };
 		DE1A75D42B84D5C200912224 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = DE1A75D32B84D5C200912224 /* Cosmos */; };
 		DE1A75DA2B8644A500912224 /* RatingViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75D92B8644A500912224 /* RatingViewRepresentable.swift */; };
 		DE1A75DC2B8644C300912224 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75DB2B8644C300912224 /* StarRatingView.swift */; };
@@ -26,8 +24,6 @@
 		DE1A75F62B8EFFD600912224 /* PickupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F52B8EFFD600912224 /* PickupScreenView.swift */; };
 		DE1A75F82B8EFFEA00912224 /* PopularScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */; };
 		DE1A75FA2B90C66A00912224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A75F92B90C66A00912224 /* AppDelegate.swift */; };
-		DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */; };
-		DE61C9482C2140150058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C9472C2140150058FEEF /* Testing */; };
 		DE61C9592C28546B0058FEEF /* UserPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */; };
 		DE61C95B2C28560D0058FEEF /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C95A2C28560D0058FEEF /* ProductEntity.swift */; };
 		DE91D9982BC1143D008B2203 /* PopularScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */; };
@@ -52,7 +48,6 @@
 		DE91D9C42BDD487D008B2203 /* FeedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D9C32BDD487D008B2203 /* FeedScreenView.swift */; };
 		DEB4145C2BE8826400DEF655 /* ConnectionErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145B2BE8826400DEF655 /* ConnectionErrorView.swift */; };
 		DEB4145E2BE9923500DEF655 /* FeedViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4145D2BE9923500DEF655 /* FeedViewStateProvider.swift */; };
-		DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = DEF3BBE72CDC36B4007B2D9A /* Shimmer */; };
 		DEF3BC362CE6559D007B2D9A /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC352CE65596007B2D9A /* NewsEntity.swift */; };
 		DEF3BC3A2CE659F1007B2D9A /* PickupPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3BC392CE659E0007B2D9A /* PickupPhotoEntity.swift */; };
 		DEF6E1DE2CF4B6B3007FBD4A /* PopularArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6E1DD2CF4B6A3007FBD4A /* PopularArticleEntity.swift */; };
@@ -87,7 +82,6 @@
 		DE1A75F72B8EFFEA00912224 /* PopularScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreenView.swift; sourceTree = "<group>"; };
 		DE1A75F92B90C66A00912224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedGeometryEffectShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectShowcaseTests.swift; sourceTree = "<group>"; };
 		DE61C9582C28546A0058FEEF /* UserPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoEntity.swift; sourceTree = "<group>"; };
 		DE61C95A2C28560D0058FEEF /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
 		DE91D9972BC1143D008B2203 /* PopularScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularScreenViewController.storyboard; sourceTree = "<group>"; };
@@ -124,12 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEF3BBE82CDC36B4007B2D9A /* Shimmer in Frameworks */,
 				DE1A75D42B84D5C200912224 /* Cosmos in Frameworks */,
 				DE1A75CC2B7FAC4700912224 /* NukeUI in Frameworks */,
 				DE1A75C82B7FAC4700912224 /* Nuke in Frameworks */,
-				DE1A75CA2B7FAC4700912224 /* NukeExtensions in Frameworks */,
-				DE1A75CE2B7FAC4700912224 /* NukeVideo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE61C9482C2140150058FEEF /* Testing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +303,6 @@
 		DE61C93D2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE61C93E2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift */,
 			);
 			path = MatchedGeometryEffectShowcaseTests;
 			sourceTree = "<group>";
@@ -431,11 +420,8 @@
 			name = MatchedGeometryEffectShowcase;
 			packageProductDependencies = (
 				DE1A75C72B7FAC4700912224 /* Nuke */,
-				DE1A75C92B7FAC4700912224 /* NukeExtensions */,
 				DE1A75CB2B7FAC4700912224 /* NukeUI */,
-				DE1A75CD2B7FAC4700912224 /* NukeVideo */,
 				DE1A75D32B84D5C200912224 /* Cosmos */,
-				DEF3BBE72CDC36B4007B2D9A /* Shimmer */,
 			);
 			productName = MatchedGeometryEffectShowcase;
 			productReference = DE1A75AB2B7B65B900912224 /* MatchedGeometryEffectShowcase.app */;
@@ -456,7 +442,6 @@
 			);
 			name = MatchedGeometryEffectShowcaseTests;
 			packageProductDependencies = (
-				DE61C9472C2140150058FEEF /* Testing */,
 			);
 			productName = MatchedGeometryEffectShowcaseTests;
 			productReference = DE61C93C2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.xctest */;
@@ -493,8 +478,7 @@
 			packageReferences = (
 				DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */,
 				DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */,
-				DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */,
-				DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+				DEE49CF32D8158F400CC22A8 /* XCRemoteSwiftPackageReference "swift-navigation" */,
 			);
 			productRefGroup = DE1A75AC2B7B65B900912224 /* Products */;
 			projectDirPath = "";
@@ -578,7 +562,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE61C93F2C203C3F0058FEEF /* MatchedGeometryEffectShowcaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,7 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.MatchedGeometryEffectShowcaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectShowcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectShowcase";
 			};
@@ -802,7 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.MatchedGeometryEffectShowcaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectShowcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectShowcase";
 			};
@@ -857,20 +840,12 @@
 				minimumVersion = 25.0.1;
 			};
 		};
-		DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+		DEE49CF32D8158F400CC22A8 /* XCRemoteSwiftPackageReference "swift-navigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-navigation.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.1;
-			};
-		};
-		DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-testing.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.99.0;
+				minimumVersion = 2.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -881,35 +856,15 @@
 			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
-		DE1A75C92B7FAC4700912224 /* NukeExtensions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = NukeExtensions;
-		};
 		DE1A75CB2B7FAC4700912224 /* NukeUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = NukeUI;
 		};
-		DE1A75CD2B7FAC4700912224 /* NukeVideo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = NukeVideo;
-		};
 		DE1A75D32B84D5C200912224 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
-		};
-		DE61C9472C2140150058FEEF /* Testing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE61C9452C213FF00058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */;
-			productName = Testing;
-		};
-		DEF3BBE72CDC36B4007B2D9A /* Shimmer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE576C872C8F0CC400249532 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
-			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
