@@ -1,7 +1,23 @@
+# Xcode
+.DS_Store
+/.build
+/Packages
+xcuserdata/
+DerivedData/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+
 # Others
 *.swp
 !.gitkeep
 .DS_Store
 
 # このプロジェクト独自のもの
-/Backend/node_modules/*
+
+# Docker
+Docker/.env
+
+# Prisma
+Backend/node_modules
+Backend/.env
