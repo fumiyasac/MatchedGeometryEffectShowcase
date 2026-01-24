@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AppExtension
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
 

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import UIKit
+import Screen
+import AppExtension
 
 // MEMO: 簡単なMatchedGeometryEffectを利用した表現を利用したサンプルを作成する
 // → UIKitでカスタムトランジションの様な感じを表現する
