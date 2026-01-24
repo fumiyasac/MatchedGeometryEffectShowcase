@@ -182,8 +182,6 @@
 				DE1A75C22B7E289900912224 /* Entity */,
 				DE1A75BF2B7E283D00912224 /* Extension */,
 				DE1A75C02B7E284600912224 /* Infrastructure */,
-				DE1A75C12B7E286700912224 /* Repository */,
-				DEF3BC342CE57A65007B2D9A /* Request */,
 				DE1A75C52B7E293D00912224 /* Screen */,
 				DE1A75C32B7E28B700912224 /* ViewObject */,
 				DE1A75BE2B7E281B00912224 /* ViewStateProvider */,
@@ -222,13 +220,6 @@
 				DE1A75E52B878D0B00912224 /* APIClientManager.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		DE1A75C12B7E286700912224 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		DE1A75C22B7E289900912224 /* Entity */ = {
@@ -395,13 +386,6 @@
 			path = FeedScreenView;
 			sourceTree = "<group>";
 		};
-		DEF3BC342CE57A65007B2D9A /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,7 +462,6 @@
 			packageReferences = (
 				DE1A75C62B7FAC4700912224 /* XCRemoteSwiftPackageReference "Nuke" */,
 				DE1A75D22B84D5C200912224 /* XCRemoteSwiftPackageReference "Cosmos" */,
-				DEE49CF32D8158F400CC22A8 /* XCRemoteSwiftPackageReference "swift-navigation" */,
 			);
 			productRefGroup = DE1A75AC2B7B65B900912224 /* Products */;
 			projectDirPath = "";
@@ -838,14 +821,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 25.0.1;
-			};
-		};
-		DEE49CF32D8158F400CC22A8 /* XCRemoteSwiftPackageReference "swift-navigation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-navigation.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
