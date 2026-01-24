@@ -59,6 +59,9 @@
                             <constraint firstItem="G9X-6F-Btq" firstAttribute="top" secondItem="I4n-7h-byP" secondAttribute="bottom" constant="8" id="i9Q-Hr-qvo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="GcT-tJ-kLy" id="W1q-Xt-n5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

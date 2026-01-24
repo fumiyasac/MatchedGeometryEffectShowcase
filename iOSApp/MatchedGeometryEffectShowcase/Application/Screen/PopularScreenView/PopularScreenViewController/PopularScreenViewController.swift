@@ -9,6 +9,10 @@ import UIKit
 
 final class PopularScreenViewController: UIViewController {
 
+    // MARK: - @IBOutlet
+
+    @IBOutlet private weak var collectionView: UICollectionView!
+
     // MARK: - Override
 
     override func viewDidLoad() {
