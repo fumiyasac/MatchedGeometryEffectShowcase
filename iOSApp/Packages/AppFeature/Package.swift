@@ -11,6 +11,9 @@ let package = Package(
         .library(name: "Entity", targets: ["Entity"]),
         .library(name: "AppExtension", targets: ["AppExtension"]),
         .library(name: "Infrastructure", targets: ["Infrastructure"]),
+        .library(name: "Repository", targets: ["Repository"]),
+        .library(name: "UseCase", targets: ["UseCase"]),
+        .library(name: "LocalStorage", targets: ["LocalStorage"]),
         .library(name: "Common", targets: ["Common"]),
         .library(name: "Components", targets: ["Components"]),
         .library(name: "ViewStateProvider", targets: ["ViewStateProvider"]),
@@ -37,6 +40,21 @@ let package = Package(
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .target(
+            name: "Repository",
+            dependencies: ["Entity", "Infrastructure"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .target(
+            name: "UseCase",
+            dependencies: ["Entity", "Repository"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .target(
+            name: "LocalStorage",
+            dependencies: ["Entity"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .target(
             name: "Common",
             dependencies: ["AppExtension"],
             swiftSettings: [.swiftLanguageMode(.v5)]
@@ -51,7 +69,7 @@ let package = Package(
         ),
         .target(
             name: "ViewStateProvider",
-            dependencies: ["Entity", "Infrastructure"],
+            dependencies: ["Entity", "Infrastructure", "Repository", "UseCase", "LocalStorage"],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .target(
@@ -69,6 +87,17 @@ let package = Package(
             resources: [
                 .process("Resources"),
             ],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        // MARK: - Test Targets
+        .testTarget(
+            name: "UseCaseTests",
+            dependencies: ["UseCase", "Entity", "Repository"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .testTarget(
+            name: "RepositoryTests",
+            dependencies: ["Repository", "Entity", "Infrastructure"],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
     ]

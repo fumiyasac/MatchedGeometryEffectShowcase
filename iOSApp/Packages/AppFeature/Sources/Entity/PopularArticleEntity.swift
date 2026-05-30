@@ -1,37 +1,33 @@
 import Foundation
 
-public struct PopularArticleEntity {
+public struct PopularArticleEntity: Codable, Identifiable, Equatable {
 
-    // MARK: - Property
-
-    public let identifier: UUID
+    public let id: UUID
     public let articleID: Int
     public let articleTitle: String
     public let articleText: String
     public let articleMainCategory: String
     public let articleSubCategory: String
     public let articleHashtags: [String]
-    public let articlePhotoUrl: URL?
-
-    // MARK: - Initializer
+    public let imageName: String
 
     public init(
-        identifier: UUID = UUID(),
+        id: UUID = UUID(),
         articleID: Int,
         articleTitle: String,
         articleText: String,
         articleMainCategory: String,
         articleSubCategory: String,
         articleHashtags: [String],
-        articlePhotoUrl: URL?
+        imageName: String
     ) {
-        self.identifier = identifier
+        self.id = id
         self.articleID = articleID
         self.articleTitle = articleTitle
         self.articleText = articleText
         self.articleMainCategory = articleMainCategory
         self.articleSubCategory = articleSubCategory
         self.articleHashtags = articleHashtags
-        self.articlePhotoUrl = articlePhotoUrl
+        self.imageName = imageName
     }
 }

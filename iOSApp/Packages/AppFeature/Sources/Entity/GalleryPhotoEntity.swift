@@ -1,34 +1,30 @@
 import Foundation
 
-public struct GalleryPhotoEntity {
+public struct GalleryPhotoEntity: Codable, Identifiable, Equatable {
 
-    // MARK: - Property
-
-    public let identifier: UUID
+    public let id: UUID
     public let galleryPhotoID: Int
     public let category: String
     public let title: String
     public let catchCopy: String
     public let descriptionText: String
-    public let galleryPhotoUrl: URL?
-
-    // MARK: - Initializer
+    public let imageName: String
 
     public init(
-        identifier: UUID = UUID(),
+        id: UUID = UUID(),
         galleryPhotoID: Int,
         category: String,
         title: String,
         catchCopy: String,
         descriptionText: String,
-        galleryPhotoUrl: URL?
+        imageName: String
     ) {
-        self.identifier = identifier
+        self.id = id
         self.galleryPhotoID = galleryPhotoID
         self.category = category
         self.title = title
         self.catchCopy = catchCopy
         self.descriptionText = descriptionText
-        self.galleryPhotoUrl = galleryPhotoUrl
+        self.imageName = imageName
     }
 }

@@ -1,10 +1,8 @@
 import Foundation
 
-public struct ProductEntity {
+public struct ProductEntity: Codable, Identifiable, Equatable {
 
-    // MARK: - Property
-
-    public let identifier: UUID
+    public let id: UUID
     public let productID: Int
     public let isPremium: Bool
     public let isSale: Bool
@@ -16,12 +14,15 @@ public struct ProductEntity {
     public let productMainCategory: String
     public let productSubCategory: String
     public let productHashtags: [String]
-    public let productPhotoUrl: URL?
+    public let imageName: String
 
-    // MARK: - Initializer
+    public var discountedPrice: Int {
+        guard isSale, percentSale > 0 else { return regularPrice }
+        return regularPrice - (regularPrice * percentSale / 100)
+    }
 
     public init(
-        identifier: UUID = UUID(),
+        id: UUID = UUID(),
         productID: Int,
         isPremium: Bool,
         isSale: Bool,
@@ -33,9 +34,9 @@ public struct ProductEntity {
         productMainCategory: String,
         productSubCategory: String,
         productHashtags: [String],
-        productPhotoUrl: URL?
+        imageName: String
     ) {
-        self.identifier = identifier
+        self.id = id
         self.productID = productID
         self.isPremium = isPremium
         self.isSale = isSale
@@ -47,6 +48,6 @@ public struct ProductEntity {
         self.productMainCategory = productMainCategory
         self.productSubCategory = productSubCategory
         self.productHashtags = productHashtags
-        self.productPhotoUrl = productPhotoUrl
+        self.imageName = imageName
     }
 }

@@ -38,7 +38,7 @@ struct GalleryScreenClassicView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UINavigationController {
         let navigationController = UINavigationController()
         navigationController.pushViewController(
-            UIStoryboard(name: "GalleryScreenViewController", bundle: Bundle.module).instantiateInitialViewController()!,
+            GalleryScreenViewController.instantiate(),
             animated: false
         )
         return navigationController

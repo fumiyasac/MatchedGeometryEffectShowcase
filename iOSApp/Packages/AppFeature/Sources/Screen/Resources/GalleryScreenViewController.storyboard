@@ -16,24 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GalleryScreenViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hew-4K-uVp">
-                                <rect key="frame" x="87.666666666666686" y="415.66666666666669" width="218" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GcT-ga-cv1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0" minimumInteritemSpacing="0" id="flo-ga-cv1">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Hew-4K-uVp" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0uw-I8-qgY"/>
-                            <constraint firstItem="Hew-4K-uVp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="GWS-7s-paj"/>
+                            <constraint firstItem="GcT-ga-cv1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="cv1-top"/>
+                            <constraint firstItem="GcT-ga-cv1" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="cv1-bot"/>
+                            <constraint firstItem="GcT-ga-cv1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="cv1-lead"/>
+                            <constraint firstItem="GcT-ga-cv1" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="cv1-trail"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="GcT-ga-cv1" id="out-ga-cv1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21" y="-2"/>
+        </scene>
+        <!--Gallery Detail View Controller-->
+        <scene sceneID="gal-det-scene">
+            <objects>
+                <viewController id="gal-det-vc" storyboardIdentifier="GalleryDetailViewController" customClass="GalleryDetailViewController" customModule="Screen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gal-det-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gal-det-sv">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gal-det-sa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gal-det-sv" firstAttribute="top" secondItem="gal-det-view" secondAttribute="top" id="sv-top"/>
+                            <constraint firstItem="gal-det-sv" firstAttribute="bottom" secondItem="gal-det-view" secondAttribute="bottom" id="sv-bot"/>
+                            <constraint firstItem="gal-det-sv" firstAttribute="leading" secondItem="gal-det-view" secondAttribute="leading" id="sv-lead"/>
+                            <constraint firstItem="gal-det-sv" firstAttribute="trailing" secondItem="gal-det-view" secondAttribute="trailing" id="sv-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="gal-det-sv" id="out-det-sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gal-det-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="-2"/>
         </scene>
     </scenes>
     <resources>

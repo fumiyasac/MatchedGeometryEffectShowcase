@@ -17,46 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GcT-tJ-kLy">
-                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="53g-5V-fxD">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0" minimumInteritemSpacing="0" id="53g-5V-fxD">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PopularScreenViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-7h-byP">
-                                <rect key="frame" x="85" y="415.66666666666669" width="223" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-6F-Btq">
-                                <rect key="frame" x="159" y="444.66666666666669" width="75" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="KTa-7X-Og0"/>
-                                    <constraint firstAttribute="height" constant="35" id="nJ8-gl-BGq"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="VHd-mv-92P" kind="show" id="Tes-Ro-O6f"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="0VQ-Kh-Nqr"/>
-                            <constraint firstItem="I4n-7h-byP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="3qV-3x-xQC"/>
-                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="JAY-2f-yas"/>
-                            <constraint firstItem="I4n-7h-byP" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="R79-Ta-XcX"/>
-                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="U9Z-cm-1bM"/>
-                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="VI3-B6-RgR"/>
-                            <constraint firstItem="G9X-6F-Btq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hkj-BD-grf"/>
-                            <constraint firstItem="G9X-6F-Btq" firstAttribute="top" secondItem="I4n-7h-byP" secondAttribute="bottom" constant="8" id="i9Q-Hr-qvo"/>
+                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pop-cv-top"/>
+                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="pop-cv-bot"/>
+                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="pop-cv-lead"/>
+                            <constraint firstItem="GcT-tJ-kLy" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="pop-cv-trail"/>
                         </constraints>
                     </view>
                     <connections>
@@ -70,31 +48,29 @@
         <!--Popular Screen Detail View Controller-->
         <scene sceneID="Ew5-ha-wg7">
             <objects>
-                <viewController id="rff-AN-rMR" customClass="PopularScreenDetailViewController" customModule="Screen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="imj-j3-UWI">
+                <viewController id="pop-det-vc" storyboardIdentifier="PopularScreenDetailViewController" customClass="PopularScreenDetailViewController" customModule="Screen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pop-det-view">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JP6-yd-BhI"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pop-det-sv">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pop-det-sa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pop-det-sv" firstAttribute="top" secondItem="pop-det-view" secondAttribute="top" id="dsv-top"/>
+                            <constraint firstItem="pop-det-sv" firstAttribute="bottom" secondItem="pop-det-view" secondAttribute="bottom" id="dsv-bot"/>
+                            <constraint firstItem="pop-det-sv" firstAttribute="leading" secondItem="pop-det-view" secondAttribute="leading" id="dsv-lead"/>
+                            <constraint firstItem="pop-det-sv" firstAttribute="trailing" secondItem="pop-det-view" secondAttribute="trailing" id="dsv-trail"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="pop-det-sv" id="out-pop-det-sv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a20-Gr-190" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="717" y="-689"/>
-        </scene>
-        <!--Sample View Controller-->
-        <scene sceneID="6Sd-bh-G81">
-            <objects>
-                <viewController id="VHd-mv-92P" customClass="SampleViewController" customModule="Screen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D8I-3G-EU7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="DEc-Yn-VhV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ykb-Tu-qjp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XJE-7A-1u7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="717" y="-2"/>
         </scene>

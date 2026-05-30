@@ -21,38 +21,56 @@ public enum HTTPMethod {
 
 // MARK: - Protocol
 
-public protocol APIClientManagerProtocol {
+public protocol APIClientManagerProtocol {}
+
+// MARK: - Endpoint
+
+public enum APIEndpoint {
+
+    private static let baseURL = "http://localhost:3000/api/v1"
+
+    case galleryPhotos
+    case galleryPhoto(id: Int)
+    case pickupFoods
+    case popularArticles
+    case popularArticle(id: Int)
+    case products
+    case product(id: Int)
+    case featured
+    case news
+    case search
+
+    public var url: String {
+        switch self {
+        case .galleryPhotos:       return "\(Self.baseURL)/gallery_photos"
+        case .galleryPhoto(let id): return "\(Self.baseURL)/gallery_photos/\(id)"
+        case .pickupFoods:         return "\(Self.baseURL)/pickup_foods"
+        case .popularArticles:     return "\(Self.baseURL)/popular_articles"
+        case .popularArticle(let id): return "\(Self.baseURL)/popular_articles/\(id)"
+        case .products:            return "\(Self.baseURL)/products"
+        case .product(let id):     return "\(Self.baseURL)/products/\(id)"
+        case .featured:            return "\(Self.baseURL)/featured"
+        case .news:                return "\(Self.baseURL)/news"
+        case .search:              return "\(Self.baseURL)/search"
+        }
+    }
 }
 
-public final class ApiClientManager {
+// MARK: - ApiClientManager
 
-    // MARK: - Singleton Instance
+public final class ApiClientManager {
 
     public static let shared = ApiClientManager()
 
     private init() {}
 
-    // MARK: - Enum
-
-    private enum EndPoint: String {
-
-        case pickupFoods = "pickup_foods"
-        case popularFoods = "popular_foods"
-
-        func getBaseUrl() -> String {
-            return [host, self.rawValue].joined(separator: "/")
-        }
-    }
-
-    // MARK: - Properties
-
-    private static let host = "http://localhost:3000"
-
-    // MARK: - Function
-
-    public func executeAPIRequest<T: Decodable>(endpointUrl: String, withParameters: [String : Any] = [:], httpMethod: HTTPMethod = .GET, responseFormat: T.Type) async throws -> T {
-
-        var urlRequest: URLRequest
+    public func executeAPIRequest<T: Decodable>(
+        endpointUrl: String,
+        withParameters: [String: Any] = [:],
+        httpMethod: HTTPMethod = .GET,
+        responseFormat: T.Type
+    ) async throws -> T {
+        let urlRequest: URLRequest
         switch httpMethod {
         case .GET:
             urlRequest = makeGetRequest(endpointUrl, withParameters: withParameters)
@@ -62,7 +80,7 @@ public final class ApiClientManager {
         return try await handleAPIRequest(responseType: T.self, urlRequest: urlRequest)
     }
 
-    // MARK: - Private Function
+    // MARK: - Private
 
     private func handleAPIRequest<T: Decodable>(responseType: T.Type, urlRequest: URLRequest) async throws -> T {
         let (data, response) = try await executeUrlSession(urlRequest: urlRequest)
@@ -84,18 +102,12 @@ public final class ApiClientManager {
             throw APIError.error(message: "No http response (\(urlString)).")
         }
         switch httpResponse.statusCode {
-        case 200...399:
-            break
-        case 400:
-            throw APIError.error(message: "Bad Request (\(urlString)).")
-        case 401:
-            throw APIError.error(message: "Unauthorized (\(urlString)).")
-        case 403:
-            throw APIError.error(message: "Forbidden (\(urlString)).")
-        case 404:
-            throw APIError.error(message: "Not Found (\(urlString)).")
-        default:
-            throw APIError.error(message: "Unknown (\(urlString)).")
+        case 200...399: break
+        case 400: throw APIError.error(message: "Bad Request (\(urlString)).")
+        case 401: throw APIError.error(message: "Unauthorized (\(urlString)).")
+        case 403: throw APIError.error(message: "Forbidden (\(urlString)).")
+        case 404: throw APIError.error(message: "Not Found (\(urlString)).")
+        default:  throw APIError.error(message: "Unknown (\(urlString)).")
         }
     }
 
@@ -107,49 +119,34 @@ public final class ApiClientManager {
         }
     }
 
-    private func makeGetRequest(_ urlString: String, withParameters: [String : Any] = [:]) -> URLRequest {
+    private func makeGetRequest(_ urlString: String, withParameters: [String: Any] = [:]) -> URLRequest {
         var urlComponents = URLComponents(string: urlString)
-        var targetQueryItems: [URLQueryItem] = []
+        var queryItems: [URLQueryItem] = []
         for (key, value) in withParameters {
-            targetQueryItems.append(URLQueryItem(name: key, value: String(describing: value)))
+            queryItems.append(URLQueryItem(name: key, value: String(describing: value)))
         }
-        if !targetQueryItems.isEmpty {
-            urlComponents?.queryItems = targetQueryItems
+        if !queryItems.isEmpty {
+            urlComponents?.queryItems = queryItems
         }
-
-        guard let url = urlComponents?.url else {
-            fatalError("Invalid URL strings.")
-        }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let authraizationHeader = ""
-        urlRequest.addValue(authraizationHeader , forHTTPHeaderField: "Authorization")
-        return urlRequest
+        guard let url = urlComponents?.url else { fatalError("Invalid URL: \(urlString)") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
     }
 
-    private func makePostRequest(_ urlString: String, withParameters: [String : Any] = [:]) -> URLRequest {
-        guard let url = URL(string: urlString) else {
-            fatalError("Invalid URL strings.")
-        }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-
+    private func makePostRequest(_ urlString: String, withParameters: [String: Any] = [:]) -> URLRequest {
+        guard let url = URL(string: urlString) else { fatalError("Invalid URL: \(urlString)") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
-            let requestBody = try JSONSerialization.data(withJSONObject: withParameters, options: [])
-            urlRequest.httpBody = requestBody
+            request.httpBody = try JSONSerialization.data(withJSONObject: withParameters, options: [])
         } catch {
-            fatalError("Invalid request body parameters.")
+            fatalError("Invalid request body.")
         }
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let authraizationHeader = ""
-        urlRequest.addValue(authraizationHeader , forHTTPHeaderField: "Authorization")
-        return urlRequest
+        return request
     }
 }
-
-// MARK: - ApiClientManagerProtocol
 
 extension ApiClientManager: APIClientManagerProtocol {}

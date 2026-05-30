@@ -1,31 +1,27 @@
 import Foundation
 
-public struct NewsEntity {
+public struct NewsEntity: Codable, Identifiable, Equatable {
 
-    // MARK: - Property
-
-    public let identifier: UUID
+    public let id: UUID
     public let newsID: Int
     public let category: String
     public let title: String
     public let descriptionText: String
-    public let thumbnailUrl: URL?
-
-    // MARK: - Initializer
+    public let imageName: String
 
     public init(
-        identifier: UUID = UUID(),
+        id: UUID = UUID(),
         newsID: Int,
         category: String,
         title: String,
         descriptionText: String,
-        thumbnailUrl: URL?
+        imageName: String
     ) {
-        self.identifier = identifier
+        self.id = id
         self.newsID = newsID
         self.category = category
         self.title = title
         self.descriptionText = descriptionText
-        self.thumbnailUrl = thumbnailUrl
+        self.imageName = imageName
     }
 }

@@ -1,37 +1,33 @@
 import Foundation
 
-public struct FeaturedEntity {
+public struct FeaturedEntity: Codable, Identifiable, Equatable {
 
-    // MARK: - Property
-
-    public let identifier: UUID
+    public let id: UUID
     public let featuredID: Int
     public let category: String
     public let title: String
     public let catchCopy: String
     public let descriptionText: String
     public let rating: Float
-    public let thumbnailUrl: URL?
-
-    // MARK: - Initializer
+    public let imageName: String
 
     public init(
-        identifier: UUID = UUID(),
+        id: UUID = UUID(),
         featuredID: Int,
         category: String,
         title: String,
         catchCopy: String,
         descriptionText: String,
         rating: Float,
-        thumbnailUrl: URL?
+        imageName: String
     ) {
-        self.identifier = identifier
+        self.id = id
         self.featuredID = featuredID
         self.category = category
         self.title = title
         self.catchCopy = catchCopy
         self.descriptionText = descriptionText
         self.rating = rating
-        self.thumbnailUrl = thumbnailUrl
+        self.imageName = imageName
     }
 }

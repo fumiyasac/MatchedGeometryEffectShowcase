@@ -58,6 +58,15 @@ struct ContentView: View {
                             Text("Gallery")
                         }
                     }.tag(3)
+                // Searchコンテンツ画面
+                // ※ SwiftUI製画面
+                SearchScreenView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    }.tag(4)
             }
             .accentColor(Color(uiColor: UIColor(code: "#869a42")))
         }
