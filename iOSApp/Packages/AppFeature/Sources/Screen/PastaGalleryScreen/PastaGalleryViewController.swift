@@ -16,13 +16,17 @@ final class PastaGalleryViewController: UIViewController {
     // 画面遷移時に押下されたIndexPathを一時保存する
     private var selectedIndexPath: IndexPath? = nil
 
+    // MARK: - Layout Constants
+
+    private let columnCount: CGFloat = 3
+    private let cellSpacing: CGFloat = 1.0
+
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBarTitle("Pasta Gallery")
-        removeBackButtonText()
+        setupNavigationBar()
         setupCollectionView()
         bindStateProvider()
         Task { await stateProvider.fetchAll() }
@@ -30,27 +34,33 @@ final class PastaGalleryViewController: UIViewController {
 
     // MARK: - Private
 
-    private func setupCollectionView() {
-        collectionView.decelerationRate = .fast
-        collectionView.showsHorizontalScrollIndicator = true
-        collectionView.showsVerticalScrollIndicator = true
-        collectionView.bounces = false
-        collectionView.register(PastaMosaicCell.self, forCellWithReuseIdentifier: PastaMosaicCell.reuseIdentifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .systemBackground
+    private func setupNavigationBar() {
+        // 他の SwiftUI 画面 (.navigationTitle + .large) と同じ見た目を得るため
+        // システムデフォルトの透過背景 + Large Title を使う
+        title = "Pasta Gallery"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backButtonDisplayMode = .minimal
+    }
 
-        // Storyboard側で MultipleScrollDirectionLayout を適用している前提で delegate を紐付ける
-        if let multipleScrollDirectionLayout = collectionView.collectionViewLayout as? MultipleScrollDirectionLayout {
-            multipleScrollDirectionLayout.delegate = self
-            multipleScrollDirectionLayout.cellSpacing = 1.0
-            // MEMO: automaticSize だと UICollectionView が cell に self-sizing を要求し、
-            // 固定サイズを返す本カスタムレイアウトと再計算の無限ループを起こしてクラッシュするため明示的に無効化する
-            multipleScrollDirectionLayout.estimatedItemSize = .zero
+    private func setupCollectionView() {
+        collectionView.register(PastaMosaicCell.self, forCellWithReuseIdentifier: PastaMosaicCell.reuseIdentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = .systemBackground
+        collectionView.alwaysBounceVertical = true
+
+        if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flow.minimumInteritemSpacing = cellSpacing
+            flow.minimumLineSpacing = cellSpacing
+            flow.sectionInset = .zero
+            // MEMO: self-sizing セルを無効化する（本画面は delegate で固定サイズを返すため）
+            flow.estimatedItemSize = .zero
         }
     }
 
     private func bindStateProvider() {
+        // MEMO: Observation Frameworkによるデータバインディング
         withObservationTracking {
             _ = stateProvider.pastaList
         } onChange: { [weak self] in
@@ -63,24 +73,17 @@ final class PastaGalleryViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-// MEMO: 横方向のセル数は numberOfItemsInSection, 縦方向のセル数は numberOfSections で定義する
-// 24枚のパスタ画像を 4列 × 6行 で配置する
 
 extension PastaGalleryViewController: UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        stateProvider.pastaList.isEmpty ? 0 : 6
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        stateProvider.pastaList.isEmpty ? 0 : 4
+        stateProvider.pastaList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PastaMosaicCell.reuseIdentifier, for: indexPath) as! PastaMosaicCell
-        let fixedIndex = indexPath.section * 4 + indexPath.row
-        guard fixedIndex < stateProvider.pastaList.count else { return cell }
-        cell.configure(with: stateProvider.pastaList[fixedIndex])
+        guard indexPath.item < stateProvider.pastaList.count else { return cell }
+        cell.configure(with: stateProvider.pastaList[indexPath.item])
         return cell
     }
 }
@@ -90,15 +93,14 @@ extension PastaGalleryViewController: UICollectionViewDataSource {
 extension PastaGalleryViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let fixedIndex = indexPath.section * 4 + indexPath.row
-        guard fixedIndex < stateProvider.pastaList.count else { return }
-        let pasta = stateProvider.pastaList[fixedIndex]
+        guard indexPath.item < stateProvider.pastaList.count else { return }
+        let pasta = stateProvider.pastaList[indexPath.item]
 
         selectedIndexPath = indexPath
 
         let detailVC = PastaDetailViewController.instantiate()
         detailVC.configure(with: pasta)
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -107,15 +109,19 @@ extension PastaGalleryViewController: UICollectionViewDelegate {
 extension PastaGalleryViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        PastaMosaicCell.cellSize
+        // 3列グリッド。横幅から隙間を差し引いて均等割する
+        let totalSpacing = cellSpacing * (columnCount - 1)
+        let availableWidth = collectionView.bounds.width - totalSpacing
+        let side = floor(availableWidth / columnCount)
+        return CGSize(width: side, height: side)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        .zero
+        cellSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        .zero
+        cellSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -70,10 +70,16 @@ final class PastaDetailViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        setupNavigationBarTitle(pasta.title)
+        setupNavigationBar()
         setupImageView()
         setupInfoCard()
         setupDismissPanGesture()
+    }
+
+    private func setupNavigationBar() {
+        title = pasta.title
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.backButtonDisplayMode = .minimal
     }
 
     override func viewDidAppear(_ animated: Bool) {
