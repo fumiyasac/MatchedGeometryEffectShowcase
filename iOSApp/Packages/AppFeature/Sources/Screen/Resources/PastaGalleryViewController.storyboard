@@ -31,10 +31,10 @@
                         <viewLayoutGuide key="safeArea" id="pst-sa-main"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pst-cv-main" firstAttribute="top" secondItem="pst-sa-main" secondAttribute="top" id="pst-cv-top"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="bottom" secondItem="pst-sa-main" secondAttribute="bottom" id="pst-cv-bot"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="leading" secondItem="pst-sa-main" secondAttribute="leading" id="pst-cv-lead"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="trailing" secondItem="pst-sa-main" secondAttribute="trailing" id="pst-cv-trail"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="top" secondItem="pst-view-main" secondAttribute="top" id="pst-cv-top"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="bottom" secondItem="pst-view-main" secondAttribute="bottom" id="pst-cv-bot"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="leading" secondItem="pst-view-main" secondAttribute="leading" id="pst-cv-lead"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="trailing" secondItem="pst-view-main" secondAttribute="trailing" id="pst-cv-trail"/>
                         </constraints>
                     </view>
                     <connections>

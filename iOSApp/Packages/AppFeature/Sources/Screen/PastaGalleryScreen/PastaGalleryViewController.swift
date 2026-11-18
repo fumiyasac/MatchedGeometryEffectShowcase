@@ -49,6 +49,8 @@ final class PastaGalleryViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.alwaysBounceVertical = true
+        // MEMO: NavigationBar / TabBar 下まで content を流し、SwiftUI の ScrollView と同じ見た目を得るための設定
+        collectionView.contentInsetAdjustmentBehavior = .automatic
 
         if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flow.minimumInteritemSpacing = cellSpacing

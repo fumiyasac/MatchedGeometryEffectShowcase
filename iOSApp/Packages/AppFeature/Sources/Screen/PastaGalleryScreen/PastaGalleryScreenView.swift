@@ -10,7 +10,10 @@ public struct PastaGalleryScreenView: View {
 
     public var body: some View {
         PastaGalleryHostingView()
-            .ignoresSafeArea(edges: .top)
+            // MEMO: TabBar の translucent 下にも content を流し込むため全エッジを ignore する。
+            // UIKit 側 (collectionView.contentInsetAdjustmentBehavior = .automatic) が
+            // additionalSafeAreaInsets から NavigationBar / TabBar の高さを自動適用する。
+            .ignoresSafeArea()
     }
 }
 
