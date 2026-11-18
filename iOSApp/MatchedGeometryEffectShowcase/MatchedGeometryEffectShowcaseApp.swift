@@ -10,11 +10,6 @@ import SwiftUI
 @main
 struct MatchedGeometryEffectShowcaseApp: App {
 
-    // MARK: - Property
-
-    // MEMO: AppDelegate
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
     // MARK: - Body
 
     var body: some Scene {

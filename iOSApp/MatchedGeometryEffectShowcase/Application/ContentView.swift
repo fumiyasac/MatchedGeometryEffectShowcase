@@ -30,25 +30,6 @@ struct ContentView: View {
                         }
                     }
                     .tag(0)
-                // Pickupコンテンツ画面
-                // ※ SwiftUI製画面
-                PickupScreenView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "book.pages.fill")
-                            Text("Pickup")
-                        }
-                    }
-                    .tag(1)
-                // Popularコンテンツ画面
-                // ※ UIKit製画面
-                PopularScreenView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "photo.stack.fill")
-                            Text("Popular")
-                        }
-                    }.tag(2)
                 // Galleryコンテンツ画面
                 // ※ UIKit製画面
                 GalleryScreenView()
@@ -57,18 +38,9 @@ struct ContentView: View {
                             Image(systemName: "tray.full.fill")
                             Text("Gallery")
                         }
-                    }.tag(3)
-                // Searchコンテンツ画面
-                // ※ SwiftUI製画面
-                SearchScreenView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "magnifyingglass")
-                            Text("Search")
-                        }
-                    }.tag(4)
+                    }.tag(1)
             }
-            .accentColor(Color(uiColor: UIColor(code: "#869a42")))
+            .accentColor(Color(uiColor: UIColor(code: "#ffd900")))
         }
     }
 }

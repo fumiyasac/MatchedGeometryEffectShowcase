@@ -13,7 +13,6 @@ let package = Package(
         .library(name: "Infrastructure", targets: ["Infrastructure"]),
         .library(name: "Repository", targets: ["Repository"]),
         .library(name: "UseCase", targets: ["UseCase"]),
-        .library(name: "LocalStorage", targets: ["LocalStorage"]),
         .library(name: "Common", targets: ["Common"]),
         .library(name: "Components", targets: ["Components"]),
         .library(name: "ViewStateProvider", targets: ["ViewStateProvider"]),
@@ -50,11 +49,6 @@ let package = Package(
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .target(
-            name: "LocalStorage",
-            dependencies: ["Entity"],
-            swiftSettings: [.swiftLanguageMode(.v5)]
-        ),
-        .target(
             name: "Common",
             dependencies: ["AppExtension"],
             swiftSettings: [.swiftLanguageMode(.v5)]
@@ -69,7 +63,7 @@ let package = Package(
         ),
         .target(
             name: "ViewStateProvider",
-            dependencies: ["Entity", "Infrastructure", "Repository", "UseCase", "LocalStorage"],
+            dependencies: ["Entity", "Infrastructure", "Repository", "UseCase"],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .target(

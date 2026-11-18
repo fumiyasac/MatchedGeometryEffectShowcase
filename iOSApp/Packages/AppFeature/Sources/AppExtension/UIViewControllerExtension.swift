@@ -12,7 +12,7 @@ extension UIViewController {
         guard let nav = self.navigationController else {
             return
         }
-        nav.navigationBar.barTintColor = UIColor(code: "#869a42")
+        nav.navigationBar.barTintColor = UIColor(code: "#ffd900")
         nav.navigationBar.titleTextAttributes = attributes
 
         self.navigationItem.title = title

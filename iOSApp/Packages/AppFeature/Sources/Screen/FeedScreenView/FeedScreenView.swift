@@ -1,7 +1,6 @@
 import SwiftUI
 import Entity
 import ViewStateProvider
-import LocalStorage
 
 public struct FeedScreenView: View {
 
@@ -23,7 +22,7 @@ public struct FeedScreenView: View {
                             namespace: heroNamespace,
                             onTap: { selectedFeatured = $0 }
                         )
-                        NewsSection(items: stateProvider.newsList)
+
                         ProductGridSection(
                             items: stateProvider.productList,
                             namespace: productNamespace,
@@ -212,56 +211,6 @@ private struct StarRatingRow: View {
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
         }
-    }
-}
-
-// MARK: - NewsSection
-
-private struct NewsSection: View {
-    let items: [NewsEntity]
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("グルメニュース")
-                .font(.title2.bold())
-                .padding(.horizontal, 16)
-
-            ForEach(items.prefix(6)) { item in
-                NewsRow(item: item)
-            }
-        }
-        .padding(.bottom, 24)
-    }
-}
-
-private struct NewsRow: View {
-    let item: NewsEntity
-
-    var body: some View {
-        HStack(spacing: 12) {
-            Image(item.imageName, bundle: .module)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(item.category)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.orange)
-                Text(item.title)
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                Text(item.descriptionText)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
-            Spacer()
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 6)
     }
 }
 

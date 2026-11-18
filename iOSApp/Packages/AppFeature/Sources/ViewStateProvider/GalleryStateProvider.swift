@@ -2,7 +2,6 @@ import Foundation
 import Entity
 import Infrastructure
 import UseCase
-import LocalStorage
 
 @Observable
 public final class GalleryStateProvider {
@@ -27,7 +26,6 @@ public final class GalleryStateProvider {
         } catch {
             errorMessage = error.localizedDescription
             requestState = .error
-            photoList = LocalMockDataProvider.galleryPhotos()
         }
     }
 }
