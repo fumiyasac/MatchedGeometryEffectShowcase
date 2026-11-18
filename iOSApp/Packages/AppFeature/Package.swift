@@ -14,14 +14,10 @@ let package = Package(
         .library(name: "Repository", targets: ["Repository"]),
         .library(name: "UseCase", targets: ["UseCase"]),
         .library(name: "Common", targets: ["Common"]),
-        .library(name: "Components", targets: ["Components"]),
         .library(name: "ViewStateProvider", targets: ["ViewStateProvider"]),
         .library(name: "Screen", targets: ["Screen"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/kean/Nuke.git", from: "12.8.0"),
-        .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "25.0.1"),
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "Entity",
@@ -57,7 +53,6 @@ let package = Package(
             name: "Components",
             dependencies: [
                 "AppExtension",
-                .product(name: "Cosmos", package: "Cosmos"),
             ],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
@@ -73,10 +68,7 @@ let package = Package(
                 "AppExtension",
                 "Infrastructure",
                 "Common",
-                "Components",
                 "ViewStateProvider",
-                .product(name: "Nuke", package: "Nuke"),
-                .product(name: "NukeUI", package: "Nuke"),
             ],
             resources: [
                 .process("Resources"),

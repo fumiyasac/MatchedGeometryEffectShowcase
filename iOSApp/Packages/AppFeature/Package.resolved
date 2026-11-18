@@ -1,24 +1,7 @@
 {
   "originHash" : "82df4006b2c0510c66d1f1aa27cd26d0343f88a157881fe0193955bcd03be76a",
   "pins" : [
-    {
-      "identity" : "cosmos",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/evgenyneu/Cosmos.git",
-      "state" : {
-        "revision" : "40ba10aaf175bf50abefd0e518bd3b40862af3b1",
-        "version" : "25.0.1"
-      }
-    },
-    {
-      "identity" : "nuke",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kean/Nuke.git",
-      "state" : {
-        "revision" : "0ead44350d2737db384908569c012fe67c421e4d",
-        "version" : "12.8.0"
-      }
-    }
+
   ],
   "version" : 3
 }
