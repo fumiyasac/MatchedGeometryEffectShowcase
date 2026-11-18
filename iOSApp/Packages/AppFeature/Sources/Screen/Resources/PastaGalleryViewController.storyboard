@@ -19,8 +19,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pst-cv-main">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0" minimumInteritemSpacing="0" id="pst-flow-main">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0" minimumInteritemSpacing="0" id="pst-flow-main" customClass="MultipleScrollDirectionLayout" customModule="Screen">
+                                    <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -31,10 +31,10 @@
                         <viewLayoutGuide key="safeArea" id="pst-sa-main"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pst-cv-main" firstAttribute="top" secondItem="pst-view-main" secondAttribute="top" id="pst-cv-top"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="bottom" secondItem="pst-view-main" secondAttribute="bottom" id="pst-cv-bot"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="leading" secondItem="pst-view-main" secondAttribute="leading" id="pst-cv-lead"/>
-                            <constraint firstItem="pst-cv-main" firstAttribute="trailing" secondItem="pst-view-main" secondAttribute="trailing" id="pst-cv-trail"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="top" secondItem="pst-sa-main" secondAttribute="top" id="pst-cv-top"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="bottom" secondItem="pst-sa-main" secondAttribute="bottom" id="pst-cv-bot"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="leading" secondItem="pst-sa-main" secondAttribute="leading" id="pst-cv-lead"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="trailing" secondItem="pst-sa-main" secondAttribute="trailing" id="pst-cv-trail"/>
                         </constraints>
                     </view>
                     <connections>
@@ -53,21 +53,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pst-sv-detail">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pst-iv-detail">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </scrollView>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pst-sa-detail"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pst-sv-detail" firstAttribute="top" secondItem="pst-view-detail" secondAttribute="top" id="pst-sv-top"/>
-                            <constraint firstItem="pst-sv-detail" firstAttribute="bottom" secondItem="pst-view-detail" secondAttribute="bottom" id="pst-sv-bot"/>
-                            <constraint firstItem="pst-sv-detail" firstAttribute="leading" secondItem="pst-view-detail" secondAttribute="leading" id="pst-sv-lead"/>
-                            <constraint firstItem="pst-sv-detail" firstAttribute="trailing" secondItem="pst-view-detail" secondAttribute="trailing" id="pst-sv-trail"/>
+                            <constraint firstItem="pst-iv-detail" firstAttribute="top" secondItem="pst-view-detail" secondAttribute="top" id="pst-iv-top"/>
+                            <constraint firstAttribute="bottom" secondItem="pst-iv-detail" secondAttribute="bottom" id="pst-iv-bot"/>
+                            <constraint firstItem="pst-iv-detail" firstAttribute="leading" secondItem="pst-view-detail" secondAttribute="leading" id="pst-iv-lead"/>
+                            <constraint firstAttribute="trailing" secondItem="pst-iv-detail" secondAttribute="trailing" id="pst-iv-trail"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="pst-sv-detail" id="pst-outlet-sv"/>
+                        <outlet property="imageView" destination="pst-iv-detail" id="pst-outlet-iv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pst-fr-detail" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

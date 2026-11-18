@@ -15,11 +15,12 @@ public struct PastaGalleryScreenView: View {
 }
 
 // MARK: - UIViewControllerRepresentable
+// MEMO: カスタムトランジション付きの UINavigationController をホストする
 
 struct PastaGalleryHostingView: UIViewControllerRepresentable {
 
-    func makeUIViewController(context: Context) -> UINavigationController {
-        let navigationController = UINavigationController()
+    func makeUIViewController(context: Context) -> PastaGalleryNavigationController {
+        let navigationController = PastaGalleryNavigationController()
         navigationController.navigationBar.prefersLargeTitles = false
         navigationController.pushViewController(
             PastaGalleryViewController.instantiate(),
@@ -28,7 +29,7 @@ struct PastaGalleryHostingView: UIViewControllerRepresentable {
         return navigationController
     }
 
-    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {}
+    func updateUIViewController(_ uiViewController: PastaGalleryNavigationController, context: Context) {}
 }
 
 // MARK: - Preview

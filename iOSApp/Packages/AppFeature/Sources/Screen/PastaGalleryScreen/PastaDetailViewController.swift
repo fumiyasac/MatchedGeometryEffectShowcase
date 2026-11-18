@@ -2,47 +2,45 @@ import UIKit
 import Entity
 import AppExtension
 
+// MARK: - 詳細画面（Fluid Photo Gallery風）
+// ・UIImageView（scaleAspectFit）を全画面に敷く
+// ・UIPanGestureRecognizerによるインタラクティブな Pop を提供する
+// ・画像下部にパスタのメタ情報を表示する（遷移アニメーションを妨げない位置）
+
 final class PastaDetailViewController: UIViewController {
 
     // MARK: - @IBOutlet
 
-    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var imageView: UIImageView!
 
     // MARK: - Properties
 
-    private var pasta: PastaEntity?
+    private let dismissPanGesture = UIPanGestureRecognizer()
+    private var pasta: PastaEntity!
 
-    private let heroImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
-    }()
+    // UIPanGestureRecognizerで発動したDismiss時のアニメーション発火状況
+    private(set) var isInteractivelyDismissing: Bool = false
 
-    private let headerView: PastaDetailHeaderView = {
-        let v = PastaDetailHeaderView(frame: .zero)
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
-    }()
+    // PhotoDetailInteractiveDismissTransition との連動用
+    weak var transitionController: PastaDetailInteractiveDismissTransition? = nil
 
-    private let contentCard: UIView = {
+    // メタ情報オーバーレイ（遷移完了後にフェードインする）
+    private lazy var infoCard: UIView = {
         let v = UIView()
-        v.backgroundColor = .systemBackground
-        v.layer.cornerRadius = 28
-        v.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        v.clipsToBounds = true
+        v.backgroundColor = UIColor.black.withAlphaComponent(0.72)
+        v.layer.cornerRadius = 16
         v.translatesAutoresizingMaskIntoConstraints = false
+        v.alpha = 0
         return v
     }()
 
     private let categoryBadge: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 12, weight: .bold)
+        l.font = .systemFont(ofSize: 11, weight: .bold)
         l.textColor = .white
         l.backgroundColor = UIColor(red: 0.98, green: 0.60, blue: 0.38, alpha: 1.0)
         l.textAlignment = .center
-        l.layer.cornerRadius = 10
+        l.layer.cornerRadius = 9
         l.clipsToBounds = true
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
@@ -50,34 +48,18 @@ final class PastaDetailViewController: UIViewController {
 
     private let titleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 24, weight: .heavy)
-        l.textColor = .label
-        l.numberOfLines = 0
+        l.font = .systemFont(ofSize: 18, weight: .bold)
+        l.textColor = .white
+        l.numberOfLines = 1
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
 
-    private let catchCopyLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let l = UILabel()
-        l.font = .italicSystemFont(ofSize: 15)
-        l.textColor = .secondaryLabel
-        l.numberOfLines = 0
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private let separator: UIView = {
-        let v = UIView()
-        v.backgroundColor = .separator
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
-    }()
-
-    private let bodyLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 15)
-        l.textColor = .label
-        l.numberOfLines = 0
+        l.font = .systemFont(ofSize: 13)
+        l.textColor = UIColor.white.withAlphaComponent(0.9)
+        l.numberOfLines = 3
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
@@ -86,97 +68,106 @@ final class PastaDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = .systemBackground
-        buildLayout()
-        if let pasta { populateData(pasta: pasta) }
+        setupNavigationBarTitle(pasta.title)
+        setupImageView()
+        setupInfoCard()
+        setupDismissPanGesture()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3, delay: 0.05) {
+            self.infoCard.alpha = 1
+        }
     }
 
     // MARK: - Function
 
     func configure(with pasta: PastaEntity) {
         self.pasta = pasta
-        if isViewLoaded { populateData(pasta: pasta) }
     }
 
     // MARK: - Private
 
-    private func buildLayout() {
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.delegate = self
-        scrollView.addSubview(heroImageView)
-        scrollView.addSubview(contentCard)
-        view.addSubview(headerView)
-
-        contentCard.addSubview(categoryBadge)
-        contentCard.addSubview(titleLabel)
-        contentCard.addSubview(catchCopyLabel)
-        contentCard.addSubview(separator)
-        contentCard.addSubview(bodyLabel)
-
-        NSLayoutConstraint.activate([
-            heroImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            heroImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            heroImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            heroImageView.heightAnchor.constraint(equalToConstant: 360),
-
-            contentCard.topAnchor.constraint(equalTo: heroImageView.bottomAnchor, constant: -40),
-            contentCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            contentCard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentCard.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentCard.widthAnchor.constraint(equalTo: view.widthAnchor),
-
-            categoryBadge.topAnchor.constraint(equalTo: contentCard.topAnchor, constant: 28),
-            categoryBadge.leadingAnchor.constraint(equalTo: contentCard.leadingAnchor, constant: 20),
-            categoryBadge.heightAnchor.constraint(equalToConstant: 22),
-            categoryBadge.widthAnchor.constraint(greaterThanOrEqualToConstant: 60),
-
-            titleLabel.topAnchor.constraint(equalTo: categoryBadge.bottomAnchor, constant: 12),
-            titleLabel.leadingAnchor.constraint(equalTo: contentCard.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: contentCard.trailingAnchor, constant: -20),
-
-            catchCopyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            catchCopyLabel.leadingAnchor.constraint(equalTo: contentCard.leadingAnchor, constant: 20),
-            catchCopyLabel.trailingAnchor.constraint(equalTo: contentCard.trailingAnchor, constant: -20),
-
-            separator.topAnchor.constraint(equalTo: catchCopyLabel.bottomAnchor, constant: 16),
-            separator.leadingAnchor.constraint(equalTo: contentCard.leadingAnchor, constant: 20),
-            separator.trailingAnchor.constraint(equalTo: contentCard.trailingAnchor, constant: -20),
-            separator.heightAnchor.constraint(equalToConstant: 0.5),
-
-            bodyLabel.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 16),
-            bodyLabel.leadingAnchor.constraint(equalTo: contentCard.leadingAnchor, constant: 20),
-            bodyLabel.trailingAnchor.constraint(equalTo: contentCard.trailingAnchor, constant: -20),
-            bodyLabel.bottomAnchor.constraint(equalTo: contentCard.bottomAnchor, constant: -60),
-
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 100),
-        ])
-
-        headerView.headerBackButtonTappedHandler = { [weak self] in
-            self?.dismiss(animated: true)
-        }
-        headerView.changeAlpha(0)
+    private func setupImageView() {
+        imageView.image = UIImage(named: pasta.imageName, in: Bundle.module, compatibleWith: nil)
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .white
+        imageView.accessibilityIgnoresInvertColors = true
     }
 
-    private func populateData(pasta: PastaEntity) {
-        heroImageView.image = UIImage(named: pasta.imageName, in: Bundle.module, compatibleWith: nil)
+    private func setupInfoCard() {
+        view.addSubview(infoCard)
+        infoCard.addSubview(categoryBadge)
+        infoCard.addSubview(titleLabel)
+        infoCard.addSubview(descriptionLabel)
+
         categoryBadge.text = "  \(pasta.category)  "
         titleLabel.text = pasta.title
-        catchCopyLabel.text = pasta.catchCopy
-        bodyLabel.text = pasta.descriptionText
-        headerView.setTitle(pasta.title)
+        descriptionLabel.text = pasta.catchCopy
+
+        NSLayoutConstraint.activate([
+            infoCard.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            infoCard.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            infoCard.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+
+            categoryBadge.topAnchor.constraint(equalTo: infoCard.topAnchor, constant: 14),
+            categoryBadge.leadingAnchor.constraint(equalTo: infoCard.leadingAnchor, constant: 14),
+            categoryBadge.heightAnchor.constraint(equalToConstant: 18),
+            categoryBadge.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
+
+            titleLabel.topAnchor.constraint(equalTo: categoryBadge.bottomAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: infoCard.leadingAnchor, constant: 14),
+            titleLabel.trailingAnchor.constraint(equalTo: infoCard.trailingAnchor, constant: -14),
+
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 6),
+            descriptionLabel.leadingAnchor.constraint(equalTo: infoCard.leadingAnchor, constant: 14),
+            descriptionLabel.trailingAnchor.constraint(equalTo: infoCard.trailingAnchor, constant: -14),
+            descriptionLabel.bottomAnchor.constraint(equalTo: infoCard.bottomAnchor, constant: -14),
+        ])
+    }
+
+    private func setupDismissPanGesture() {
+        view.addGestureRecognizer(dismissPanGesture)
+        dismissPanGesture.addTarget(self, action: #selector(dismissPanGestureDidChange(_:)))
+    }
+
+    @objc private func dismissPanGestureDidChange(_ gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            isInteractivelyDismissing = true
+            self.navigationController?.popViewController(animated: true)
+        case .cancelled, .failed, .ended:
+            isInteractivelyDismissing = false
+        default:
+            break
+        }
+        transitionController?.didPanWith(gestureRecognizer: gesture)
     }
 }
 
-// MARK: - UIScrollViewDelegate
+// MARK: - PastaDetailTransitionAnimatorDelegate
 
-extension PastaDetailViewController: UIScrollViewDelegate {
+extension PastaDetailViewController: PastaDetailTransitionAnimatorDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let alpha = min(max(scrollView.contentOffset.y / 220, 0), 1)
-        headerView.changeAlpha(alpha)
+    func transitionWillStart() {
+        imageView.isHidden = true
+        infoCard.alpha = 0
+    }
+
+    func transitionDidEnd() {
+        imageView.isHidden = false
+    }
+
+    func referenceImage() -> UIImage? {
+        imageView.image
+    }
+
+    func imageFrame() -> CGRect? {
+        guard let image = imageView.image else { return nil }
+        return CGRect.makeRect(aspectRatio: image.size, insideRect: imageView.bounds)
     }
 }
 
