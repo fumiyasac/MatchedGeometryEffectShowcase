@@ -29,36 +29,24 @@ public enum APIEndpoint {
 
     private static let baseURL = "http://localhost:3000/api/v1"
 
-    case galleryPhotos
-    case galleryPhoto(id: Int)
-    case pickupFoods
-    case popularArticles
-    case popularArticle(id: Int)
-    case products
-    case product(id: Int)
-    case featured
-    case news
-    case search
+    case pastas
+    case pasta(id: Int)
+    case tapas
+    case tapasItem(id: Int)
 
     public var url: String {
         switch self {
-        case .galleryPhotos:       return "\(Self.baseURL)/gallery_photos"
-        case .galleryPhoto(let id): return "\(Self.baseURL)/gallery_photos/\(id)"
-        case .pickupFoods:         return "\(Self.baseURL)/pickup_foods"
-        case .popularArticles:     return "\(Self.baseURL)/popular_articles"
-        case .popularArticle(let id): return "\(Self.baseURL)/popular_articles/\(id)"
-        case .products:            return "\(Self.baseURL)/products"
-        case .product(let id):     return "\(Self.baseURL)/products/\(id)"
-        case .featured:            return "\(Self.baseURL)/featured"
-        case .news:                return "\(Self.baseURL)/news"
-        case .search:              return "\(Self.baseURL)/search"
+        case .pastas:              return "\(Self.baseURL)/pastas"
+        case .pasta(let id):       return "\(Self.baseURL)/pastas/\(id)"
+        case .tapas:               return "\(Self.baseURL)/tapas"
+        case .tapasItem(let id):   return "\(Self.baseURL)/tapas/\(id)"
         }
     }
 }
 
 // MARK: - ApiClientManager
 
-public final class ApiClientManager {
+public final class ApiClientManager: @unchecked Sendable {
 
     public static let shared = ApiClientManager()
 
@@ -84,7 +72,7 @@ public final class ApiClientManager {
 
     private func handleAPIRequest<T: Decodable>(responseType: T.Type, urlRequest: URLRequest) async throws -> T {
         let (data, response) = try await executeUrlSession(urlRequest: urlRequest)
-        let _ = try handleErrorByStatusCode(urlRequest: urlRequest, response: response)
+        _ = try handleErrorByStatusCode(urlRequest: urlRequest, response: response)
         return try decodeDataToJson(data: data)
     }
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pst-vc-main">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pasta Gallery View Controller-->
+        <scene sceneID="pst-scn-main">
+            <objects>
+                <viewController id="pst-vc-main" customClass="PastaGalleryViewController" customModule="Screen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pst-view-main">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pst-cv-main">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0" minimumInteritemSpacing="0" id="pst-flow-main">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pst-sa-main"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pst-cv-main" firstAttribute="top" secondItem="pst-view-main" secondAttribute="top" id="pst-cv-top"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="bottom" secondItem="pst-view-main" secondAttribute="bottom" id="pst-cv-bot"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="leading" secondItem="pst-view-main" secondAttribute="leading" id="pst-cv-lead"/>
+                            <constraint firstItem="pst-cv-main" firstAttribute="trailing" secondItem="pst-view-main" secondAttribute="trailing" id="pst-cv-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pst-cv-main" id="pst-outlet-cv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pst-fr-main" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="-2"/>
+        </scene>
+        <!--Pasta Detail View Controller-->
+        <scene sceneID="pst-scn-detail">
+            <objects>
+                <viewController id="pst-vc-detail" storyboardIdentifier="PastaDetailViewController" customClass="PastaDetailViewController" customModule="Screen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pst-view-detail">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pst-sv-detail">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pst-sa-detail"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pst-sv-detail" firstAttribute="top" secondItem="pst-view-detail" secondAttribute="top" id="pst-sv-top"/>
+                            <constraint firstItem="pst-sv-detail" firstAttribute="bottom" secondItem="pst-view-detail" secondAttribute="bottom" id="pst-sv-bot"/>
+                            <constraint firstItem="pst-sv-detail" firstAttribute="leading" secondItem="pst-view-detail" secondAttribute="leading" id="pst-sv-lead"/>
+                            <constraint firstItem="pst-sv-detail" firstAttribute="trailing" secondItem="pst-view-detail" secondAttribute="trailing" id="pst-sv-trail"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="pst-sv-detail" id="pst-outlet-sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pst-fr-detail" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

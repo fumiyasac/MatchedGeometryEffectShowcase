@@ -10,38 +10,40 @@ import UIKit
 import Screen
 import AppExtension
 
-// MEMO: 簡単なMatchedGeometryEffectを利用した表現を利用したサンプルを作成する
-// → UIKitでカスタムトランジションの様な感じを表現する
+// MEMO: UIKit と SwiftUI の画面遷移を比較するためのタブ構成
+// Tab1: UIKit Pasta Gallery (UICollectionViewCompositionalLayout + カスタムトランジション)
+// Tab2: SwiftUI Pasta Grid (3列グリッド + matchedGeometryEffect)
+// Tab3: SwiftUI Tapas Timeline (.matchedTransitionSource + .navigationTransition(.zoom))
 
 struct ContentView: View {
 
     // MARK: - Body
 
     var body: some View {
-        ZStack {
-            TabView {
-                // Feedコンテンツ画面
-                // ※ SwiftUI製画面
-                FeedScreenView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "house.fill")
-                            Text("Feed")
-                        }
-                    }
-                    .tag(0)
-                // Galleryコンテンツ画面
-                // ※ UIKit製画面
-                GalleryScreenView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "tray.full.fill")
-                            Text("Gallery")
-                        }
-                    }.tag(1)
-            }
-            .accentColor(Color(uiColor: UIColor(code: "#FCD7A1")))
+        TabView {
+
+            // UIKit製: パスタギャラリー
+            PastaGalleryScreenView()
+                .tabItem {
+                    Label("Gallery", systemImage: "square.grid.2x2.fill")
+                }
+                .tag(0)
+
+            // SwiftUI製: パスタ 3列グリッド
+            PastaGridScreenView()
+                .tabItem {
+                    Label("Grid", systemImage: "square.grid.3x3.fill")
+                }
+                .tag(1)
+
+            // SwiftUI製: タパス タイムライン
+            TapasTimelineScreenView()
+                .tabItem {
+                    Label("Tapas", systemImage: "list.bullet.rectangle.portrait.fill")
+                }
+                .tag(2)
         }
+        .accentColor(Color(uiColor: UIColor(code: "#FCD7A1")))
     }
 }
 

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tapas_01.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

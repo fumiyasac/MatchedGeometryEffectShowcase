@@ -50,13 +50,6 @@ let package = Package(
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .target(
-            name: "Components",
-            dependencies: [
-                "AppExtension",
-            ],
-            swiftSettings: [.swiftLanguageMode(.v5)]
-        ),
-        .target(
             name: "ViewStateProvider",
             dependencies: ["Entity", "Infrastructure", "Repository", "UseCase"],
             swiftSettings: [.swiftLanguageMode(.v5)]
