@@ -11,6 +11,8 @@ import ViewStateProvider
 //   - 詳細表示は別 struct (PastaSelectedImageView) に切り出し、@Binding で連携
 //   - Grid 側は選択中に opacity=0 で操作不可にし、.overlay で詳細を重ねる
 //   - ImageインスタンスをStateに持たせて連続的なAnimationを実現する
+//   - 拡大→Dismiss のドラッグ中は dragPosition を親と共有し、進捗に応じて
+//     下のグリッドの opacity を 0 → 1 に段階的に戻すことで透過プレビューを実現する
 
 public struct PastaGridScreenView: View {
 
@@ -34,8 +36,33 @@ public struct PastaGridScreenView: View {
     // 👉 Image自体を渡して連続的なAnimationにする
     @State private var selectedImage: Image?
 
+    // 拡大表示中のドラッグ変化量を親子で共有する
+    // 👉 PastaSelectedImageView が更新し、こちら側はグリッドの opacity 算出に利用する
+    @State private var dragPosition: CGSize = .zero
+
     // .matchedGeometryEffectで利用する名前空間
     @Namespace private var namespace
+
+    // MARK: - Constants
+
+    // ドラッグによる dismiss 閾値（この距離を超えると閉じる、同時にグリッドが完全に見える状態になる）
+    private static let dismissThreshold: CGFloat = 200.0
+
+    // MARK: - Computed
+
+    // ドラッグ進捗 (0.0 〜 1.0)
+    private var dragProgress: CGFloat {
+        min(abs(dragPosition.height) / Self.dismissThreshold, 1.0)
+    }
+
+    // グリッドの opacity:
+    //   - 未選択時: 1
+    //   - 選択中かつドラッグなし: 0（完全に隠す）
+    //   - 選択中かつドラッグ中: dragProgress に比例して 0 → 1 に増加
+    private var gridOpacity: CGFloat {
+        guard selectedImage != nil else { return 1.0 }
+        return dragProgress
+    }
 
     // MARK: - Initializer
 
@@ -92,8 +119,10 @@ public struct PastaGridScreenView: View {
                     }
                 }
             }
-            // 拡大画像表示が選択されている時はGrid表示のアルファ値を0にして操作ができない様にする
-            .opacity(selectedImage == nil ? 1 : 0)
+            // 拡大画像表示が選択されている時はGrid表示のアルファ値を 0 に落とし、
+            // ドラッグ中は進捗に応じて徐々に透過を解除して下のグリッドを見える様にする
+            .opacity(gridOpacity)
+            .allowsHitTesting(selectedImage == nil)
         }
         .overlay {
             // .overlayを利用して拡大画像表示を上に重ねる
@@ -101,6 +130,8 @@ public struct PastaGridScreenView: View {
                 PastaSelectedImageView(
                     selectedPasta: $selectedPasta,
                     selectedImage: $selectedImage,
+                    dragPosition: $dragPosition,
+                    dismissThreshold: Self.dismissThreshold,
                     namespace: namespace
                 )
             }
@@ -120,13 +151,14 @@ struct PastaSelectedImageView: View {
     // 選択された画面切り替え対象のImage要素と連動する
     @Binding var selectedImage: Image?
 
+    // DragGestureでの変化量を親と共有する（親のグリッド opacity 算出に利用される）
+    @Binding var dragPosition: CGSize
+
+    // Dismiss 判定閾値（親から受け取る）
+    let dismissThreshold: CGFloat
+
     // .matchedGeometryEffectで利用する名前空間
     let namespace: Namespace.ID
-
-    // MARK: - Property (DragGesture Translation)
-
-    // DragGestureでの変化量を格納する
-    @State private var position = CGSize.zero
 
     // MARK: - Body
 
@@ -140,26 +172,26 @@ struct PastaSelectedImageView: View {
                     .scaledToFit()
                     .matchedGeometryEffect(id: "pasta-\(pasta.id)", in: namespace, isSource: selectedImage != nil)
                     .onTapGesture {
-                        withAnimation(.spring(response: 0.36, dampingFraction: 0.48)) {
-                            selectedImage = nil
-                            selectedPasta = nil
-                        }
+                        dismiss()
                     }
                     // DragGestureでの変化量と要素が追従する様にoffset値を更新する
-                    .offset(position)
+                    .offset(dragPosition)
                     // DragGestureを実行し、①移動中は変化量を変数に格納する、②終了時は高さの閾値を見て超過する場合は表示を元に戻す、の2つを実行する
                     .gesture(
                         DragGesture()
                             .onChanged { value in
-                                position = value.translation
+                                dragPosition = value.translation
                             }
                             .onEnded { _ in
                                 withAnimation(.spring(response: 0.36, dampingFraction: 0.48)) {
-                                    if 200.0 < abs(position.height) {
+                                    if dismissThreshold < abs(dragPosition.height) {
+                                        // Dismiss：先に dragPosition をリセットしてから close
                                         selectedImage = nil
                                         selectedPasta = nil
+                                        dragPosition = .zero
                                     } else {
-                                        position = .zero
+                                        // 閾値未満なら元の位置に戻る → グリッドは opacity 0 に戻る
+                                        dragPosition = .zero
                                     }
                                 }
                             }
@@ -170,7 +202,17 @@ struct PastaSelectedImageView: View {
                 Color(.white)
             }
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    // MARK: - Private
+
+    private func dismiss() {
+        withAnimation(.spring(response: 0.36, dampingFraction: 0.48)) {
+            selectedImage = nil
+            selectedPasta = nil
+            dragPosition = .zero
+        }
     }
 }
 
