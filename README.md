@@ -104,30 +104,21 @@ UIKit と SwiftUI における画面遷移表現の違いを比較検証する�
 
 MVVM に近い構成を採用。View からの一方向のデータフローと、Observation Framework によるデータバインディングで状態を伝播させます。
 
-```
-┌──────────────────────┐
-│       View           │  SwiftUI / UIKit ViewController
-└──────────┬───────────┘
-           │ @Observable binding
-           ▼
-┌──────────────────────┐
-│  ViewStateProvider   │  @MainActor @Observable
-└──────────┬───────────┘  （SwiftUI の ViewModel 相当）
-           │
-           ▼
-┌──────────────────────┐
-│      UseCase         │  ビジネスロジック
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│     Repository       │  データアクセス抽象化
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│   Infrastructure     │  APIClientManager + Response モデル
-└──────────────────────┘
+```mermaid
+flowchart TD
+    V["<b>View</b><br/>SwiftUI View / UIKit ViewController"]
+    VSP["<b>ViewStateProvider</b><br/>@MainActor @Observable<br/>（SwiftUI の ViewModel 相当）"]
+    UC["<b>UseCase</b><br/>ビジネスロジック"]
+    R["<b>Repository</b><br/>データアクセス抽象化"]
+    I["<b>Infrastructure</b><br/>APIClientManager + Response モデル"]
+
+    V -- "@Observable binding" --> VSP
+    VSP --> UC
+    UC --> R
+    R --> I
+
+    classDef layer fill:#fff5e6,stroke:#d28445,stroke-width:1.5px,color:#333;
+    class V,VSP,UC,R,I layer;
 ```
 
 **データフォールバック**: 各 `Repository` は `http://localhost:3000/api/v1/*` へ API リクエストを試みた後、ネットワークエラー時には `PastaMockData` / `TapasMockData` のローカルモックデータを返却する実装になっています。これにより、バックエンドサーバーがなくても動作検証が可能です。
@@ -148,17 +139,47 @@ AppFeature/Sources/
 
 モジュール間の依存関係 (`Package.swift` にて定義):
 
-```
-Screen ──┬── Entity
-         ├── AppExtension
-         ├── Infrastructure
-         ├── Common
-         └── ViewStateProvider ──┬── Entity
-                                 ├── Infrastructure
-                                 ├── Repository ──── Entity
-                                 │                   └── Infrastructure
-                                 └── UseCase ────── Entity
-                                                    └── Repository
+```mermaid
+graph TD
+    Screen["<b>Screen</b><br/>画面実装 / Resources"]
+    VSP["<b>ViewStateProvider</b>"]
+    UseCase["<b>UseCase</b>"]
+    Repository["<b>Repository</b><br/>（Repository + MockData）"]
+    Infrastructure["<b>Infrastructure</b><br/>（APIClientManager + Response）"]
+    Common["<b>Common</b>"]
+    AppExtension["<b>AppExtension</b>"]
+    Entity["<b>Entity</b>"]
+
+    Screen --> VSP
+    Screen --> Infrastructure
+    Screen --> Common
+    Screen --> AppExtension
+    Screen --> Entity
+
+    VSP --> UseCase
+    VSP --> Repository
+    VSP --> Infrastructure
+    VSP --> Entity
+
+    UseCase --> Repository
+    UseCase --> Entity
+
+    Repository --> Infrastructure
+    Repository --> Entity
+
+    Infrastructure --> Entity
+
+    Common --> AppExtension
+
+    classDef ui fill:#e8f1ff,stroke:#3b6db0,stroke-width:1.5px,color:#222;
+    classDef domain fill:#fff5e6,stroke:#d28445,stroke-width:1.5px,color:#222;
+    classDef infra fill:#e8f7ec,stroke:#3c8e59,stroke-width:1.5px,color:#222;
+    classDef base fill:#f3f3f3,stroke:#888,stroke-width:1.5px,color:#222;
+
+    class Screen,VSP ui;
+    class UseCase,Repository domain;
+    class Infrastructure infra;
+    class Common,AppExtension,Entity base;
 ```
 
 ---
@@ -280,12 +301,6 @@ swift-testing (`@Suite` / `@Test`) によるユニットテストを `AppFeature
 | `UseCaseTests/TapasUseCaseTests` | `TapasUseCase.fetchAll` / `fetchByID` |
 | `RepositoryTests/MockDataTests` | `PastaMockData` / `TapasMockData` の件数・ID 連番性・imageName フォーマット整合性 |
 
-### テスト実行 (Xcode)
-
-```
-⌘U
-```
-
 ### テスト実行 (CLI)
 
 ```bash
@@ -371,18 +386,6 @@ private func bindStateProvider() {
     }
 }
 ```
-
----
-
-## 参考実装
-
-本プロジェクトは下記の既存サンプルを参考に、パスタ / タパスをテーマとしたアプリとして再構築したものです。
-
-| タブ | 参考リポジトリ |
-| --- | --- |
-| Pasta Gallery (UIKit) | [fumiyasac/meals_2nd_ios_ui_recipe_showcase - 01_FluidPhotoGalleyLayout](https://github.com/fumiyasac/meals_2nd_ios_ui_recipe_showcase/tree/master/01_FluidPhotoGalleyLayout/FluidPhotoGalleyLayout) |
-| Pasta Grid (SwiftUI) | [fumiyasac/CharacteristicStyleSwiftUIExample - Gallery](https://github.com/fumiyasac/CharacteristicStyleSwiftUIExample/tree/main/iOSApp/CharacteristicStyleSwiftUIExample/Sources/Screen/Gallery) |
-| Tapas Timeline (SwiftUI) | [fumiyasac/MediaStyleViewSwiftUI - Timeline](https://github.com/fumiyasac/MediaStyleViewSwiftUI/tree/master/MediaStyleViewSwiftUI/Sources/AppFeature/Timeline) |
 
 ---
 
