@@ -43,7 +43,7 @@ struct ContentView: View {
                 }
                 .tag(2)
         }
-        .accentColor(Color(uiColor: UIColor(code: "#FCD7A1")))
+        .accentColor(Color(uiColor: UIColor(code: "#FF6347")))
     }
 }
 
