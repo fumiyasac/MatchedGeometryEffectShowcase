@@ -34,22 +34,58 @@ UIKit と SwiftUI における画面遷移表現の違いを比較検証する�
 
 ## スクリーンショット
 
+各タブについて、一覧画面と拡大 / 詳細画面を並べて掲載します。
+
+### Tab 1: Pasta Gallery (UIKit)
+
 <table>
   <tr>
-    <th align="center">Pasta Gallery (UIKit)</th>
-    <th align="center">Pasta Grid (SwiftUI)</th>
+    <th align="center" width="50%">一覧</th>
+    <th align="center" width="50%">拡大 / 詳細</th>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/pasta_gallery.png" width="280" alt="Pasta Gallery"/></td>
-    <td align="center"><img src="docs/screenshots/pasta_grid.png" width="280" alt="Pasta Grid"/></td>
+    <td align="center"><img src="docs/screenshots/pasta_grid_uikit.png" width="280" alt="Pasta Gallery 一覧"/></td>
+    <td align="center"><img src="docs/screenshots/pasta_grid_expand_uikit.png" width="280" alt="Pasta Gallery 詳細"/></td>
   </tr>
   <tr>
-    <td>Storyboard + <code>UICollectionViewFlowLayout</code> による 3 列 1pt グリッド。セルをタップすると、サムネイル画像が浮き上がって拡大しながら詳細画面へ遷移。</td>
-    <td><code>LazyVGrid</code> による 3 列 1pt グリッド。セルをタップすると matchedGeometryEffect で詳細表示にモーフィング。ドラッグ量に応じて背景グリッドが段階的に透過する。</td>
+    <td>Storyboard + <code>UICollectionViewFlowLayout</code> による 3 列 1pt グリッド。</td>
+    <td>セルをタップすると、サムネイル画像が浮き上がって拡大しながら詳細画面へ遷移。下方向へのドラッグで Interactive Dismiss。</td>
   </tr>
 </table>
 
-> **Note**: Tapas Timeline のスクリーンショットおよび各画面の詳細 / 遷移中の状態については、撮影後に `docs/screenshots/` 配下へ追加してください。
+### Tab 2: Pasta Grid (SwiftUI)
+
+<table>
+  <tr>
+    <th align="center" width="50%">一覧</th>
+    <th align="center" width="50%">拡大 / 詳細</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/pasta_grid_swiftui.png" width="280" alt="Pasta Grid 一覧"/></td>
+    <td align="center"><img src="docs/screenshots/pasta_grid_expand_swiftui.png" width="280" alt="Pasta Grid 詳細"/></td>
+  </tr>
+  <tr>
+    <td><code>LazyVGrid</code> による 3 列 1pt グリッド。</td>
+    <td>セルをタップすると <code>matchedGeometryEffect</code> で拡大表示にモーフィング。拡大画像を上下にドラッグすると背景のグリッドが段階的に透過する。</td>
+  </tr>
+</table>
+
+### Tab 3: Tapas Timeline (SwiftUI)
+
+<table>
+  <tr>
+    <th align="center" width="50%">一覧</th>
+    <th align="center" width="50%">拡大 / 詳細</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/tapas_timeline_swiftui.png" width="280" alt="Tapas Timeline 一覧"/></td>
+    <td align="center"><img src="docs/screenshots/tapas_timeline_expand_swiftui.png" width="280" alt="Tapas Timeline 詳細"/></td>
+  </tr>
+  <tr>
+    <td>縦長カードタイムライン（著者ヘッダー / 本文画像 / アクションバー / キャプション）。</td>
+    <td>iOS 18 新 API の <code>.matchedTransitionSource</code> + <code>.navigationTransition(.zoom)</code> によるカード画像の Zoom 遷移。</td>
+  </tr>
+</table>
 
 ---
 
